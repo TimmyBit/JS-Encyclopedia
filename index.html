@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./img/icons8-open-book-64.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <title>JS Encyclopedia</title>
+</head>
+<body>
+    <header id="main-header">
+        <div id="top">
+            <div id="top-left">
+                <button id="menu"><i class="fa-solid fa-bars"></i></button>
+                <div id="logo-link">
+                    <a href="index.html"><img src="./img/icons8-open-book-64.png" alt="image">
+                        <h2>J.S.<span id="letter-e">E.</span></h2>
+                    </a>
+                </div>
+            </div>
+            <h1><span id="title-highlight">JS</span> Encyclopedia</h1>
+            <div id="favorites">
+                <a href=""><img src="./img/icons8-star-50.png" alt=""><h2>Favorites</h2></a>
+            </div>
+        </div>
+    </header>
+
+    <div id="screen-wrapper">
+        <aside id="side-menu">
+            <p>CATEGORIES</p>
+            <ul></ul>
+        </aside>
+
+        <section id="hero">
+            <div id="intro-box">
+                <i class="fa-solid fa-lightbulb"></i>
+                <i class="fa-solid fa-square-root-variable"></i>
+                <i class="fa-solid fa-download"></i>
+                <h2>My Personal Encyclopedia</h2>
+                <i class="fa-solid fa-server"></i>
+                <i class="fa-solid fa-computer-mouse"></i>
+                <i class="fa-solid fa-file"></i>
+            </div>
+
+            <p id="intro-text">Most referenced categories.</p>
+
+            <div id="intro-cards" class="cards">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h2>Arrays</h2>
+                    <p>Store and organize multiple values in a single variable, with methods to search, sort, add, or remove items.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h2>Objects</h2>
+                    <p>Create collections of related data and functionality using key-value pairs, useful for modeling real-world entities.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-arrows-spin"></i>
+                    </div>
+                    <h2>Loops</h2>
+                    <p>Automate repetitive tasks by running blocks of code multiple times until a specific condition is met.</p>
+                </div>
+            </div>
+            <footer>
+                <p>Design inspired by Brad Traversy's WebUtils.</p>
+                <p>&copy; 2025 J.S.E. All rights reserved.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

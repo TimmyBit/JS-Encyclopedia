@@ -1,0 +1,100 @@
+{
+    "categories": [
+        {
+            "id": "basics",
+            "name": "Basics",
+            "icon": "fa-lightbulb",
+            "description": "Learn the core building blocks of JavaScript including variables, constants, data types, operators, and the basic rules of writing code."
+        },
+        {
+            "id": "arrays",
+            "name": "Arrays",
+            "icon": "fa-layer-group",
+            "description": "Store and organize multiple values in a single variable, with methods to search, sort, add, or remove items."
+        },
+        {
+            "id": "objects",
+            "name": "Objects",
+            "icon": "fa-box-open",
+            "description": "Create collections of related data and functionality using key-value pairs, useful for modeling real-world entities."
+        },
+        {
+            "id": "conditionals",
+            "name": "Conditionals",
+            "icon": "fa-not-equal",
+            "description": "Control the flow of your programs with if/else and switch statements, allowing your code to react to different conditions."
+        },
+        {
+            "id": "loops",
+            "name": "Loops",
+            "icon": "fa-arrows-spin",
+            "description": "Automate repetitive tasks by running blocks of code multiple times until a specific condition is met."
+        },
+        {
+            "id": "functions",
+            "name": "Functions",
+            "icon": "fa-gear",
+            "description": "Write reusable pieces of code that accept input, perform tasks, and return results, making programs more efficient."
+        },
+        {
+            "id": "string",
+            "name": "String",
+            "icon": "fa-quote-left",
+            "description": "Work with text using methods for searching, slicing, replacing, and formatting content."
+        },
+        {
+            "id": "number",
+            "name": "Number",
+            "icon": "fa-hashtag",
+            "description": "Handle numeric values, perform calculations, round results, and convert between different number types."
+        },
+        {
+            "id": "math",
+            "name": "Math",
+            "icon": "fa-square-root-variable",
+            "description": "Use JavaScript's Math object for advanced calculations, random number generation, and mathematical constants."
+        },
+        {
+            "id": "date-&-time",
+            "name": "Date & Time",
+            "icon": "fa-clock",
+            "description": "Manage and manipulate dates, times, and durations using the Date object and related methods."
+        },
+        {
+            "id": "dom-&-events",
+            "name": "DOM & Events",
+            "icon": "fa-computer-mouse",
+            "description": "Dynamically update webpages and respond to user interactions through the Document Object Model and event handling."
+        },
+        {
+            "id": "web-api",
+            "name": "Web API",
+            "icon": "fa-server",
+            "description": "Extend JavaScript with browser-provided tools like LocalStorage, Fetch, Canvas, and Geolocation."
+        },
+        {
+            "id": "json",
+            "name": "JSON",
+            "icon": "fa-file",
+            "description": "Structure, store, and exchange data in a lightweight, human-readable format widely used in web development."
+        },
+        {
+            "id": "es6+",
+            "name": "ES6+",
+            "icon": "fa-wand-sparkles",
+            "description": "Take advantage of modern JavaScript features such as arrow functions, template literals, classes, and modules."
+        },
+        {
+            "id": "fetch-&-promises",
+            "name": "Fetch & Promises",
+            "icon": "fa-download",
+            "description": "Retrieve data from APIs, work with asynchronous code, and handle responses and errors smoothly."
+        },
+        {
+            "id": "error-&-debugging",
+            "name": "Error & Debugging",
+            "icon": "fa-bug",
+            "description": "Find and fix problems in your code using debugging tools, error handling techniques, and best practices."
+        }
+    ]
+}

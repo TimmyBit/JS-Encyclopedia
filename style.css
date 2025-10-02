@@ -1,0 +1,340 @@
+:root {
+    --bg: #000;
+    --panel: #1a1a1a;
+    --muted: #464646;
+    --text: #fff;
+    --accent-gradient: linear-gradient(180deg, #1463ff 4%, #9103dd 61%, #c636d9 81%);
+}
+
+* {margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+
+ul {list-style: none;}
+
+a {text-decoration: none;}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding-top: 85px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5rem;
+}
+
+/* Header */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 85px;
+    z-index: 1000;
+    background: transparent;
+}
+
+#top {
+    height:85px;
+    background:var(--panel);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 10px 20px;
+    border-bottom:1px solid var(--muted);
+}
+
+/* Top-left */
+#top-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+}
+
+#top-left img {
+    padding-bottom: 3px;
+}
+
+#menu {
+    border:none;
+    font-size:1.8rem;
+    background:none;
+    color:var(--text);
+    cursor:pointer;
+    transition: color .20s ease;
+}
+
+#menu:hover {color: #b0b0b0;}
+
+#logo-link a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: inherit;
+}
+
+#title-highlight, #logo-link h2 {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#letter-e {
+    background:#fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#top h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+#favorites a {
+    display: flex;
+    align-items: center;
+    color: var(--text);
+    gap: 5px;
+    transition: color .20s ease;
+}
+
+#favorites a:hover {
+    color: #b0b0b0;
+}
+
+/* Main layout wrapper */
+#screen-wrapper {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 85px);
+    align-items: stretch;
+    position: relative;
+}
+
+/* Side menu */
+#side-menu {
+    position: fixed;
+    top: 85px;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    max-width: 80%;
+    background: var(--panel);
+    border-right: 1px solid var(--muted);
+    padding: 20px 15px;
+    z-index: 900;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transform: translateX(-110%);
+    transition: transform .20s ease;
+}
+
+/* Slide in */
+#side-menu.active {
+    transform: translateX(0);
+}
+
+#side-menu.active ~ #hero {
+    margin-left: 250px;
+}
+
+/* Menu content */
+#side-menu p {
+    font-size: 1rem;
+    color: #b0b0b0;
+    letter-spacing: 1px;
+}
+
+#side-menu ul {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+    padding-right: 6px;
+}
+
+#side-menu li {width: 100%;}
+
+#side-menu button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: none;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    transition: background .20s ease;
+}
+
+#side-menu button:hover {background: #262626;}
+
+#side-menu button i {
+    min-width: 28px;
+    display: inline-block;
+}
+
+#side-menu button.active i,
+#side-menu button:hover i {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Main content */
+#hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 15px;
+    transition: margin .20s ease;
+}
+
+/* Intro box */
+#intro-box {
+    background: radial-gradient(ellipse at center, #1463ff 0%, #9103dd 100%, #c636d9 100%);
+    width: 70%;
+    min-width: 410px;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    border-radius: 20px;
+    padding: 48px;
+    color: var(--text);
+    position: relative;
+    gap: 18px;
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 4.5rem;
+}
+
+#intro-box i {
+    opacity: 0.5;
+    position: absolute;
+}
+
+#intro-box > *:nth-child(1) {
+    left: 10%; 
+    top: 20%;
+    transform: rotate(-15deg);
+}
+
+#intro-box > *:nth-child(2) {
+    left: 15%; 
+    bottom: 20%;
+    transform: rotate(15deg);
+}
+
+#intro-box > *:nth-child(3) {
+    right: 45%; 
+    bottom: 12%;
+    transform: rotate(-15deg);
+}
+
+#intro-box > *:nth-child(5) {
+    right: 15%; 
+    top: 20%;
+    transform: rotate(-15deg);
+}
+
+#intro-box > *:nth-child(6) {
+    right: 10%; 
+    bottom: 20%;
+    transform: rotate(15deg);
+}
+
+#intro-box > *:nth-child(7) {
+    left: 45%; 
+    top: 12%;
+    transform: rotate(15deg);
+}
+
+#intro-box p {font-size: 1.5rem;}
+
+#intro-text {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #b0b0b0;
+    width: 70%;
+    min-width: 410px;
+}
+
+/* Cards layout */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 28px;
+    width: 70%;
+    min-width: 410px;
+}
+
+.card {
+    background: var(--panel);
+    border-radius: 16px;
+    padding: 20px 25px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1rem;
+    transition: background .20s ease;
+}
+
+.card:hover {
+    background: #323232;
+    cursor: pointer;
+}
+
+.card-icon {
+    background: radial-gradient(circle at center, #1463ff 0%, #9103dd 100%, #c636d9 100%);
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    max-width: 1100px;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    margin-top: auto;
+}
+
+/* Hide the visible scrollbar */
+#side-menu {
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* WebKit browsers */
+#side-menu::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
