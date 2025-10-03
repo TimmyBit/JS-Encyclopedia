@@ -33,6 +33,8 @@ const displayCategories = async () => {
 
 // Display category content
 const displayCategoryContent = async (button) => {
+    const categoryCards = document.querySelector('.cards');
+    categoryCards.innerHTML = '';
     const menuButtons = document.querySelectorAll('#side-menu button');
     const introText = document.querySelector('#intro-text');
     menuButtons.forEach((button) => button.classList.remove('active'));
@@ -53,6 +55,19 @@ const displayCategoryContent = async (button) => {
         <i class="fa-solid ${categoryData.icon}"></i>
         <i class="fa-solid ${categoryData.icon}"></i>
     `;
+
+    categoryData.cards.forEach((card) => {
+        const cardDiv = document.createElement('div');
+        cardDiv.classList.add('card');
+        cardDiv.innerHTML = `
+        <div class="card-icon">
+            <i class="fa-solid ${categoryData.icon}"></i>
+        </div>
+        <h2>${card.title}</h2>
+        <p>${card.description}</p>
+        `;
+        categoryCards.appendChild(cardDiv);
+    });
 };
 
 // Display the side menu

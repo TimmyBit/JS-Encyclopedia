@@ -4,19 +4,73 @@
             "id": "basics",
             "name": "Basics",
             "icon": "fa-lightbulb",
-            "description": "Learn the core building blocks of JavaScript including variables, constants, data types, operators, and the basic rules of writing code."
+            "description": "Learn the core building blocks of JavaScript including variables, constants, data types, operators, and the basic rules of writing code.",
+            "cards": [
+                {
+                    "title": "Variables",
+                    "description": "Declare variables to store values."
+                },
+                {
+                    "title": "Data Types",
+                    "description": "Different kinds of values."
+                },
+                {
+                    "title": "Operators",
+                    "description": "Symbols for working with values."
+                },
+                {
+                    "title": "Console",
+                    "description": "Used to display errors and test code."
+                },
+                {
+                    "title": "Shortcuts",
+                    "description": "Used to type code quicker."
+                },
+                {
+                    "title": "Comments",
+                    "description": "Lines of code that won't run."
+                }
+            ]
         },
         {
             "id": "arrays",
             "name": "Arrays",
             "icon": "fa-layer-group",
-            "description": "Store and organize multiple values in a single variable, with methods to search, sort, add, or remove items."
+            "description": "Store and organize multiple values in a single variable, with methods to search, sort, add, or remove items.",
+            "cards": [
+                {
+                    "title": "Basics",
+                    "description": "The basics of creating and accessing arrays."
+                },
+                {
+                    "title": "Methods",
+                    "description": "Different methods to manipulate the arrays."
+                },
+                {
+                    "title": "Nesting & Spread",
+                    "description": "Structuring and extracting elements."
+                }
+            ]
         },
         {
             "id": "objects",
             "name": "Objects",
             "icon": "fa-box-open",
-            "description": "Create collections of related data and functionality using key-value pairs, useful for modeling real-world entities."
+            "description": "Create collections of related data and functionality using key-value pairs, useful for modeling real-world entities.",
+            "cards": [
+                {
+                    "title": "Basics",
+                    "description": "The basics of creating and accessing objects."
+                },
+                {
+                    "title": "Methods",
+                    "description": "Different methods to manipulate the objects."
+                },
+                {
+                    "title": "Destructuring & Spread",
+                    "description": "Structuring and extracting elements."
+                }
+            ]
         },
         {
             "id": "conditionals",
