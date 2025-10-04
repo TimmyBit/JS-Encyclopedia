@@ -227,10 +227,11 @@ body {
     text-align: center;
     font-size: 2.5rem;
     line-height: 4.5rem;
+    padding: 50px;
 }
 
 #intro-box i {
-    opacity: 0.5;
+    opacity: 0.4;
     position: absolute;
 }
 
@@ -308,10 +309,16 @@ body {
 .card-icon {
     background: radial-gradient(circle at center, #1463ff 0%, #9103dd 100%, #c636d9 100%);
     display: flex;
-    justify-content: flex-start;
-    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
     border-radius: 10px;
     font-size: 1.5rem;
+    min-height: 50px;
+}
+
+.card-icon img {
+    width: 40px;
 }
 
 /* Footer */

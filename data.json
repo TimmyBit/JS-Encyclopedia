@@ -4,31 +4,105 @@
             "id": "basics",
             "name": "Basics",
             "icon": "fa-lightbulb",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Learn the core building blocks of JavaScript including variables, constants, data types, operators, and the basic rules of writing code.",
             "cards": [
                 {
-                    "title": "Variables",
-                    "description": "Declare variables to store values."
+                    "title": "const",
+                    "description": "Declare a constant variable that cannot be reassigned.",
+                    "content": [
+                        {
+                            
+                        }
+                    ]
                 },
                 {
-                    "title": "Data Types",
-                    "description": "Different kinds of values."
+                    "title": "let",
+                    "description": "Declare a variable that can be reassigned.",
+                    "content": [
+                        {
+
+                        }
+                    ]
                 },
                 {
-                    "title": "Operators",
-                    "description": "Symbols for working with values."
+                    "title": "Primitive Data Types",
+                    "description": "Store a single value in a variable.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+
+                        }
+                    ]
+                },
+                {
+                    "title": "Refence Data Types",
+                    "description": "Store a reference to the location where the data is.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+
+                        }
+                    ]
+                },
+                {
+                    "title": "Arithmetic Operators",
+                    "description": "Basic math operators.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+
+                        }
+                    ]
+                },
+                {
+                    "title": "Assignment Operators",
+                    "description": "Do something to the value then assign it to a variable.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+
+                        }
+                    ]
+                },
+                {
+                    "title": "Comparison Operators",
+                    "description": "Used to compare values.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+
+                        }
+                    ]
                 },
                 {
                     "title": "Console",
-                    "description": "Used to display errors and test code."
+                    "description": "Used to display errors and test code.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+
+                        }
+                    ]
                 },
                 {
                     "title": "Shortcuts",
-                    "description": "Used to type code quicker."
+                    "description": "Used to type code quicker.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+
+                        }
+                    ]
                 },
                 {
                     "title": "Comments",
-                    "description": "Lines of code that won't run."
+                    "description": "Lines of code that won't run: // Single, /* Multiple */.",
+                    "content": [
+                        {
+
+                        }
+                    ]
                 }
             ]
         },
@@ -36,19 +110,54 @@
             "id": "arrays",
             "name": "Arrays",
             "icon": "fa-layer-group",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Store and organize multiple values in a single variable, with methods to search, sort, add, or remove items.",
             "cards": [
                 {
-                    "title": "Basics",
-                    "description": "The basics of creating and accessing arrays."
+                    "title": "Creating an Array",
+                    "description": "const arr = [1, 2, 3]",
+                    "content": [
+                        {
+
+                        }
+                    ]
+                },
+                {
+                    "title": "Data Types in Arrays",
+                    "description": "Arrays can have any data types. const arr = [1, 'string', true]",
+                    "content": [
+                        {
+
+                        }
+                    ]
+                },
+                {
+                    "title": "Access by Index",
+                    "description": "Arrays are zero based. arr[0]",
+                    "content": [
+                        {
+
+                        }
+                    ]
                 },
                 {
                     "title": "Methods",
-                    "description": "Different methods to manipulate the arrays."
+                    "description": "Different methods to manipulate the arrays.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+
+                        }
+                    ]
                 },
                 {
                     "title": "Nesting & Spread",
-                    "description": "Structuring and extracting elements."
+                    "description": "Structuring and extracting elements.",
+                    "content": [
+                        {
+
+                        }
+                    ]
                 }
             ]
         },
@@ -56,19 +165,36 @@
             "id": "objects",
             "name": "Objects",
             "icon": "fa-box-open",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Create collections of related data and functionality using key-value pairs, useful for modeling real-world entities.",
             "cards": [
                 {
                     "title": "Basics",
-                    "description": "The basics of creating and accessing objects."
+                    "description": "The basics of creating and accessing objects.",
+                    "content": [
+                        {
+
+                        }
+                    ]
                 },
                 {
                     "title": "Methods",
-                    "description": "Different methods to manipulate the objects."
+                    "description": "Different methods to manipulate the objects.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+
+                        }
+                    ]
                 },
                 {
                     "title": "Destructuring & Spread",
-                    "description": "Structuring and extracting elements."
+                    "description": "Structuring and extracting elements.",
+                    "content": [
+                        {
+
+                        }
+                    ]
                 }
             ]
         },
@@ -76,78 +202,109 @@
             "id": "conditionals",
             "name": "Conditionals",
             "icon": "fa-not-equal",
-            "description": "Control the flow of your programs with if/else and switch statements, allowing your code to react to different conditions."
+            "favorite": "./img/icons8-rating-circled-50.png",
+            "description": "Control the flow of your programs with if/else and switch statements, allowing your code to react to different conditions.",
+            "cards": [
+                {
+                    "title": "If Statements",
+                    "description": "Runs code if a condition is true."
+                },
+                {
+                    "title": "Switch",
+                    "description": "Tests a value against multiple cases."
+                },
+                {
+                    "title": "Ternary Operator",
+                    "description": "Shorthand for if-else."
+                },
+                {
+                    "title": "Logical Operators",
+                    "description": "Combine conditions using symbols."
+                }
+            ]
         },
         {
             "id": "loops",
             "name": "Loops",
             "icon": "fa-arrows-spin",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Automate repetitive tasks by running blocks of code multiple times until a specific condition is met."
         },
         {
             "id": "functions",
             "name": "Functions",
             "icon": "fa-gear",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Write reusable pieces of code that accept input, perform tasks, and return results, making programs more efficient."
         },
         {
             "id": "string",
             "name": "String",
             "icon": "fa-quote-left",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Work with text using methods for searching, slicing, replacing, and formatting content."
         },
         {
             "id": "number",
             "name": "Number",
             "icon": "fa-hashtag",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Handle numeric values, perform calculations, round results, and convert between different number types."
         },
         {
             "id": "math",
             "name": "Math",
             "icon": "fa-square-root-variable",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Use JavaScript's Math object for advanced calculations, random number generation, and mathematical constants."
         },
         {
             "id": "date-&-time",
             "name": "Date & Time",
             "icon": "fa-clock",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Manage and manipulate dates, times, and durations using the Date object and related methods."
         },
         {
             "id": "dom-&-events",
             "name": "DOM & Events",
             "icon": "fa-computer-mouse",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Dynamically update webpages and respond to user interactions through the Document Object Model and event handling."
         },
         {
             "id": "web-api",
             "name": "Web API",
             "icon": "fa-server",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Extend JavaScript with browser-provided tools like LocalStorage, Fetch, Canvas, and Geolocation."
         },
         {
             "id": "json",
             "name": "JSON",
             "icon": "fa-file",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Structure, store, and exchange data in a lightweight, human-readable format widely used in web development."
         },
         {
             "id": "es6+",
             "name": "ES6+",
             "icon": "fa-wand-sparkles",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Take advantage of modern JavaScript features such as arrow functions, template literals, classes, and modules."
         },
         {
             "id": "fetch-&-promises",
             "name": "Fetch & Promises",
             "icon": "fa-download",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Retrieve data from APIs, work with asynchronous code, and handle responses and errors smoothly."
         },
         {
             "id": "error-&-debugging",
             "name": "Error & Debugging",
             "icon": "fa-bug",
+            "favorite": "./img/icons8-rating-circled-50.png",
             "description": "Find and fix problems in your code using debugging tools, error handling techniques, and best practices."
         }
     ]

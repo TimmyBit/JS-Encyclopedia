@@ -35,12 +35,15 @@ const displayCategories = async () => {
 const displayCategoryContent = async (button) => {
     const categoryCards = document.querySelector('.cards');
     categoryCards.innerHTML = '';
+
     const menuButtons = document.querySelectorAll('#side-menu button');
-    const introText = document.querySelector('#intro-text');
     menuButtons.forEach((button) => button.classList.remove('active'));
     button.classList.add('active');
+
     const data = await fetchJSON('./data.json');
     if (!data) return;
+
+    const introText = document.querySelector('#intro-text');
     const introBox = document.querySelector('#intro-box');
     const id = button.id;
     const categoryData = data.categories.find((cat) => cat.id === id);
@@ -61,7 +64,11 @@ const displayCategoryContent = async (button) => {
         cardDiv.classList.add('card');
         cardDiv.innerHTML = `
         <div class="card-icon">
-            <i class="fa-solid ${categoryData.icon}"></i>
+            <div class="card-icon-group">
+                <i class="fa-solid ${categoryData.icon}"></i>
+                <i class="fa-solid ${card.nestIcon}"></i>
+            </div>
+        <img src="${categoryData.favorite}" alt="Fav">    
         </div>
         <h2>${card.title}</h2>
         <p>${card.description}</p>
