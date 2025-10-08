@@ -7,7 +7,7 @@
     #intro-box{padding:36px;}
 }
 @media (max-width:800px){
-    #top-left {
+    #top-left-corner {
         justify-content: flex-start;
         gap: 5px;
     }

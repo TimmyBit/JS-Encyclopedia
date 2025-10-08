@@ -9,21 +9,15 @@
             "cards": [
                 {
                     "title": "const",
-                    "description": "Declare a constant variable that cannot be reassigned.",
-                    "content": [
-                        {
-                            
-                        }
-                    ]
+                    "description": "Declare a constant variable that cannot be reassigned.",     
+                    "syntax": "const x = 1;",
+                    "example": "x = 2; Will return an error."
                 },
                 {
                     "title": "let",
-                    "description": "Declare a variable that can be reassigned.",
-                    "content": [
-                        {
-
-                        }
-                    ]
+                    "description": "Declare a variable that can be reassigned.",       
+                    "syntax": "let x = 1;",
+                    "example": "x = 2; x is now 2."  
                 },
                 {
                     "title": "Primitive Data Types",
@@ -31,17 +25,64 @@
                     "nestIcon": "fa-plus",
                     "content": [
                         {
-
+                            "title": "String",
+                            "description": "A sequence of characters.",      
+                            "syntax": "const firstName = 'John';"
+                              
+                        },
+                        {
+                            "title": "Number",
+                            "description": "Integer or a floating-point number.",     
+                            "syntax": "const age = '30';",
+                            "example": "const temp = 73.5;"
+                             
+                        },
+                        {
+                            "title": "Boolean",
+                            "description": "True or false value.",
+                            "syntax": "const hasKids = true;"
+                        },
+                        {
+                            "title": "Null",
+                            "description": "Intentional absence of a value.",
+                            "syntax": "let aptNumber = null;"
+                        },
+                        {
+                            "title": "Undefined",
+                            "description": "A variable without a value.",
+                            "syntax": "let score = undefined;"
+                        },
+                        {
+                            "title": "Symbol",
+                            "description": "Unique identifier.",
+                            "syntax": "const id = Symbol('id');"
+                        },
+                        {
+                            "title": "BigInt",
+                            "description": "Greater then what the number type handles.",
+                            "syntax": "const n = 9007199254740991n;"
                         }
                     ]
                 },
                 {
-                    "title": "Refence Data Types",
+                    "title": "Reference Data Types",
                     "description": "Store a reference to the location where the data is.",
                     "nestIcon": "fa-plus",
                     "content": [
                         {
-
+                            "title": "Arrays",
+                            "description": "Data structure that holds multiple values.",
+                            "syntax": "const numbers = [1, 2, 3];"
+                        },
+                        {
+                            "title": "Functions",
+                            "description": "Reusable pieces of code that perform tasks.",
+                            "syntax": "const sayHello = function () { return 'Hello' }"
+                        },
+                        {
+                            "title": "Objects",
+                            "description": "Comma seperated lists of key-value pairs.",
+                            "syntax": "{ name: 'John', age: 30, hasKids: true }"
                         }
                     ]
                 },
@@ -51,7 +92,48 @@
                     "nestIcon": "fa-plus",
                     "content": [
                         {
-
+                            "title": "Addition",
+                            "syntax": "5 + 5 = 10"
+                        },
+                        {
+                            "title": "Subtraction",
+                            "syntax": "10 - 5 = 5"
+                        },
+                        {
+                            "title": "Multiplication",
+                            "syntax": "5 * 5 = 25"
+                        },
+                        {
+                            "title": "Division",
+                            "syntax": "25 / 5 = 5"
+                        },
+                        {
+                            "title": "Modulus",
+                            "description": "Get the division remainder.",
+                            "syntax": "10 % 3 = 1"
+                        },
+                        {
+                            "title": "Exponentiation",
+                            "description": "Return the result of the first value to the power of the second.",
+                            "syntax": "2 ** 3 = 8"
+                        },
+                        {
+                            "title": "Increment",
+                            "description": "Add 1 to a value.",
+                            "syntax": "x = 10;",
+                            "example": "x++; // 11"
+                        },
+                        {
+                            "title": "Decrement",
+                            "description": "Subtract 1 from a value.",
+                            "syntax": "x = 10;",
+                            "example": "x--; // 9"
+                        },
+                        {
+                            "title": "Concatenetion",
+                            "description": "Put 2 or more strings together.",
+                            "syntax": "'Hello' + 'World' + '!';",
+                            "example": "// Hello World!"
                         }
                     ]
                 },
@@ -61,7 +143,45 @@
                     "nestIcon": "fa-plus",
                     "content": [
                         {
-
+                            "title": "Value Assignment",
+                            "description": "Simply assigning a value to a variable.",
+                            "syntax": "x = 10;"
+                        },
+                        {
+                            "title": "Addition Assignment",
+                            "description": "Adds the amount on the right side.",
+                            "syntax": "x += 10; // 20",
+                            "example": "Same as: x = x + 10;"
+                        },
+                        {
+                            "title": "Subtraction Assignment",
+                            "description": "Subtracts the amount on the right side.",
+                            "syntax": "x -= 10; // 0",
+                            "example": "Same as: x = x - 10;"
+                        },
+                        {
+                            "title": "Multiplication Assignment",
+                            "description": "Multiplies the amount on the right side.",
+                            "syntax": "x *= 10; // 100",
+                            "example": "Same as: x = x * 10;"
+                        },
+                        {
+                            "title": "Division Assignment",
+                            "description": "Divides the amount on the right side.",
+                            "syntax": "x /= 10; // 1",
+                            "example": "Same as: x = x / 10;"
+                        },
+                        {
+                            "title": "Modulo Assignment",
+                            "description": "Gets the raminder of the amount on the right side.",
+                            "syntax": "x %= 10; // 0",
+                            "example": "Same as: x = x % 10;"
+                        },
+                        {
+                            "title": "Exponentiation Assignment",
+                            "description": "Gets the exponent of the amount on the right side.",
+                            "syntax": "x **= 10; // 100",
+                            "example": "Same as: x = x ** 10;"
                         }
                     ]
                 },
@@ -71,7 +191,52 @@
                     "nestIcon": "fa-plus",
                     "content": [
                         {
-
+                            "title": "Equal To",
+                            "description": "Checks just the value.",
+                            "syntax": "2 == '2';",
+                            "example": "// true"
+                        },
+                        {
+                            "title": "Equal Value & Type",
+                            "description": "Checks the value and the type.",
+                            "syntax": "2 === '2'",
+                            "example": "// false"
+                        },
+                        {
+                            "title": "Not Equal To",
+                            "description": "Checks just the value.",
+                            "syntax": "2 != '2'",
+                            "example": "// false"
+                        },
+                        {
+                            "title": "Not Equal Value & Type",
+                            "description": "Checks the value and the type.",
+                            "syntax": "2 !== '2'",
+                            "example": "// true"
+                        },
+                        {
+                            "title": "Greater Than",
+                            "description": "Check if the value is bigger.",
+                            "syntax": "10 > 5;",
+                            "example": "// true"
+                        },
+                        {
+                            "title": "Less Than",
+                            "description": "Check if the value is smaller.",
+                            "syntax": "10 < 5;",
+                            "example": "// false"
+                        },
+                        {
+                            "title": "Greater Than or Equal",
+                            "description": "Check if the value is bigger or the same.",
+                            "syntax": "10 >= 5;",
+                            "example": "// true"
+                        },
+                        {
+                            "title": "Less Than or Equal",
+                            "description": "Check if the value is smaller or the same.",
+                            "syntax": "10 <= 5;",
+                            "example": "// false"
                         }
                     ]
                 },
@@ -81,7 +246,20 @@
                     "nestIcon": "fa-plus",
                     "content": [
                         {
-
+                            "title": "console.log();",
+                            "description": "Output a message to the console.",
+                            "syntax": "x = 10;",
+                            "example": "console.log(x); // 10"
+                        },
+                        {
+                            "title": "console.error();",
+                            "description": "Makes the text red.",
+                            "syntax": "console.error('This is an error');"
+                        },
+                        {
+                            "title": "console.warn();",
+                            "description": "Makes the text yellow.",
+                            "syntax": "console.error('This is a warning');"
                         }
                     ]
                 },
@@ -90,19 +268,61 @@
                     "description": "Used to type code quicker.",
                     "nestIcon": "fa-plus",
                     "content": [
-                        {
-
-                        }
+                       {
+                            "title": "shift + up/down",
+                            "description": "Highlight lines of code up and down."
+                       },
+                       {
+                            "title": "shift + right/left",
+                            "description": "Highlight code right and left."
+                       },
+                       {
+                            "title": "ctrl + right/left",
+                            "description": "Move cursor to beginning/end of line."
+                       },
+                       {
+                            "title": "ctrl + up/down",
+                            "description": "Move cursor to beginning/end of file."
+                       },
+                       {
+                            "title": "alt + up/down",
+                            "description": "Move line up/down."
+                       },
+                       {
+                            "title": "shift + alt + up/down",
+                            "description": "Copy line up/down."
+                       },
+                       {
+                            "title": "ctrl + /",
+                            "description": "Comment out a line of code."
+                       },
+                       {
+                            "title": "ctrl + shift + /",
+                            "description": "Comment out multiple lines of code."
+                       },
+                       {
+                            "title": "ctrl + d",
+                            "description": "Select the next instance of the selected word."
+                       },
+                       {
+                            "title": "ctrl + shift + l",
+                            "description": "Select all instances of the selected word."
+                       },
+                       {
+                            "title": "ctrl + shift + f",
+                            "description": "Search for a string in the project."
+                       },
+                       {
+                            "title": "ctrl + shift + o",
+                            "description": "Search for a file in the project."
+                       }
                     ]
                 },
                 {
                     "title": "Comments",
-                    "description": "Lines of code that won't run: // Single, /* Multiple */.",
-                    "content": [
-                        {
-
-                        }
-                    ]
+                    "description": "Lines of code that won't run",
+                    "syntax": "// Single line",
+                    "example": "/* Multiple lines */"
                 }
             ]
         },
@@ -115,29 +335,23 @@
             "cards": [
                 {
                     "title": "Creating an Array",
-                    "description": "const arr = [1, 2, 3]",
+                    "description": "Arrays are created inside variables.",
                     "content": [
-                        {
-
-                        }
+                        
                     ]
                 },
                 {
                     "title": "Data Types in Arrays",
-                    "description": "Arrays can have any data types. const arr = [1, 'string', true]",
+                    "description": "Arrays can store any data types.",
                     "content": [
-                        {
-
-                        }
+                        
                     ]
                 },
                 {
                     "title": "Access by Index",
-                    "description": "Arrays are zero based. arr[0]",
+                    "description": "Arrays are zero based.",
                     "content": [
-                        {
-
-                        }
+                       
                     ]
                 },
                 {
@@ -145,18 +359,14 @@
                     "description": "Different methods to manipulate the arrays.",
                     "nestIcon": "fa-plus",
                     "content": [
-                        {
-
-                        }
+                        
                     ]
                 },
                 {
                     "title": "Nesting & Spread",
                     "description": "Structuring and extracting elements.",
                     "content": [
-                        {
-
-                        }
+                        
                     ]
                 }
             ]
@@ -172,9 +382,7 @@
                     "title": "Basics",
                     "description": "The basics of creating and accessing objects.",
                     "content": [
-                        {
-
-                        }
+                        
                     ]
                 },
                 {
@@ -182,18 +390,14 @@
                     "description": "Different methods to manipulate the objects.",
                     "nestIcon": "fa-plus",
                     "content": [
-                        {
-
-                        }
+                        
                     ]
                 },
                 {
                     "title": "Destructuring & Spread",
                     "description": "Structuring and extracting elements.",
                     "content": [
-                        {
-
-                        }
+                        
                     ]
                 }
             ]
