@@ -290,6 +290,28 @@ body {
     min-width: 410px;
 }
 
+.intro-card {
+    background: var(--panel);
+    border-radius: 16px;
+    padding: 20px 25px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1rem;
+    transition: background .20s ease;
+}
+
+.intro-card-icon {
+    background: radial-gradient(circle at center, #1463ff 0%, #9103dd 100%, #c636d9 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    min-height: 50px;
+}
+
 .card {
     background: var(--panel);
     border-radius: 16px;

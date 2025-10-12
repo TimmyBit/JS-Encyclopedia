@@ -33,7 +33,7 @@
                         {
                             "title": "Number",
                             "description": "Integer or a floating-point number.",     
-                            "syntax": "const age = '30';",
+                            "syntax": "const age = 30;",
                             "example": "const temp = 73.5;"
                              
                         },
@@ -336,38 +336,269 @@
                 {
                     "title": "Creating an Array",
                     "description": "Arrays are created inside variables.",
-                    "content": [
-                        
-                    ]
-                },
-                {
-                    "title": "Data Types in Arrays",
-                    "description": "Arrays can store any data types.",
-                    "content": [
-                        
-                    ]
+                    "syntax": "const arr = [1, 2, 3, 4];"
                 },
                 {
                     "title": "Access by Index",
                     "description": "Arrays are zero based.",
-                    "content": [
-                       
-                    ]
+                    "syntax": "arr[0];",
+                    "example": "// 1"
                 },
                 {
-                    "title": "Methods",
+                    "title": "Mixed Values",
+                    "description": "Arrays can have any kinds of values.",
+                    "syntax": "const mixed = [1, 'John', null, true];"
+                },
+                {
+                    "title": "Nesting",
+                    "description": "Arrays can be nested inside each other.",
+                    "syntax": "const arr = [1, 2, [3, 4]];",
+                    "example": "arr[2][1]; // 4"
+                },
+                {
+                    "title": "Array Iteration",
+                    "description": "Use loops or array methods to run code on each element.",
+                    "syntax": "for (const item of arr) { console.log(item); }"
+                },
+                {
+                    "title": "Array Methods",
                     "description": "Different methods to manipulate the arrays.",
                     "nestIcon": "fa-plus",
                     "content": [
-                        
+                        {
+                            "title": "Static Vs Non Static",
+                            "description": "Static methods require the 'Array' keyword in front of it, non static methods are applied directly to the array"
+                        },
+                        {
+                            "title": ".length",
+                            "description": "A property that returns the length of the array.",
+                            "syntax": "arr.length;",
+                            "example": "// 4"
+                        },
+                        {
+                            "title": ".push()",
+                            "description": "Adds to the end of the array (Non Static).",
+                            "syntax": "arr.push(5);",
+                            "example": "// [1, 2, 3, 4, 5]"
+                        },
+                        {
+                            "title": ".pop()",
+                            "description": "Removes the last item in the array (Non static).",
+                            "syntax": "arr.pop();",
+                            "example": "// [1, 2, 3]"
+                        },
+                        {
+                            "title": ".unshift()",
+                            "description": "Adds to the beginning of the array (Non static).",
+                            "syntax": "arr.unshift(0);",
+                            "example": "// [0, 1, 2, 3, 4]"
+                        },
+                        {
+                            "title": ".shift()",
+                            "description": "Remove from the beginning of the array (Non static).",
+                            "syntax": "arr.shift();",
+                            "example": "// [2, 3, 4]"
+                        },
+                        {
+                            "title": ".reverse()",
+                            "description": "Exactly that (Non static).",
+                            "syntax": "arr.reverse();",
+                            "example": "// [4, 3, 2, 1]"
+                        },
+                        {
+                            "title": ".includes()",
+                            "description": "Returns true if the array has the passed value (Non static).",
+                            "syntax": "arr.includes(2);",
+                            "example": "// true"
+                        },
+                        {
+                            "title": ".indexOf()",
+                            "description": "Returns the index for the passed value (Non static).",
+                            "syntax": "arr.indexOf(2);",
+                            "example": "// 1"
+                        },
+                        {
+                            "title": ".join()",
+                            "description": "Returns the elements as a string with a separator (Non static).", 
+                            "syntax": "arr.join(' and ');",
+                            "example": "// '1 and 2 and 3 and 4'"
+                        },
+                        {
+                            "title": ".slice()",
+                            "description": "Extracts a part of the array without affecting the original, end is not a part of sliced part (Non static).", 
+                            "syntax": "arr.slice(1, 3);",
+                            "example": "// [2, 3]"
+                        },
+                        {
+                            "title": ".splice()",
+                            "description": "Directly modifies the array by adding, removing, and changing the elements (Non static).", 
+                            "syntax": "arr.splice(2, 0, 3.5);",
+                            "example": "// [1, 2, 3, 3.5, 4]"
+                        },
+                        {
+                            "title": ".concat()",
+                            "description": "Combine with another array (Non static).", 
+                            "syntax": "arr.concat(arr2);",
+                            "example": "// [1, 2, 3, 4, 5, 6]"
+                        },
+                        {
+                            "title": ".flat()",
+                            "description": "Removes the brackets from nested arrays, 'Infinity' to remove from all levels (Non static).", 
+                            "syntax": "arr.flat(Infinity)",
+                            "example": "// [[1, 2], [3, 4]] => [1, 2, 3, 4]"
+                        },
+                        {
+                            "title": ".isArray()",
+                            "description": "Check if something is an array (Static).",
+                            "syntax": "Array.isArray(arr);",
+                            "example": "// true"
+                        },
+                        {
+                            "title": ".from()",
+                            "description": "Convert an array like object into an array (Static).",
+                            "syntax": "Array.from(string);",
+                            "example": "// ['H', 'e', 'l', 'l', 'o']"
+                        },
+                        {
+                            "title": ".of()",
+                            "description": "Create an array from a variable number of arguments (Static).",
+                            "syntax": "Array.of('John', 30, true);",
+                            "example": "// ['John', 30, true]"
+                        },
+                        {
+                            "title": ".forEach()",
+                            "description": "Used to apply code to each element in the array (Non static).",
+                            "syntax": "items.forEach((item) => {code...})"
+                        },
+                        {
+                            "title": ".filter()",
+                            "description": "Returns an array of items that meet the condition that is passed (Non static).",
+                            "syntax": "arr.filter((item) => item % 2 === 0);",
+                            "example": "// [2, 4]"
+                        },
+                        {
+                            "title": ".map()",
+                            "description": "Returns an array that is the result of a function called on each element (Non static).",
+                            "syntax": "arr.map((item) => item * 2);",
+                            "example": "// [2, 4, 6, 8]"
+                        },
+                        {
+                            "title": ".reduce()",
+                            "description": "Reduces the array to a single value by running a function on each element (Non static).",
+                            "syntax": "arr.reduce((acc, curr) => acc + curr, 0);",
+                            "example": "// [1, 2, 3, 4] => 10"
+                        },
+                        {
+                            "title": ".find()",
+                            "description": "Returns the first element that matches a condition (Non static).",
+                            "syntax": "arr.find(item => item > 3);",
+                            "example": "// 4"
+                        },
+                        {
+                            "title": ".findIndex()",
+                            "description": "Returns the index of the first element that matches a condition (Non static).",
+                            "syntax": "arr.findIndex(item => item > 3);",
+                            "example": "// 3"
+                        },
+                        {
+                            "title": ".some()",
+                            "description": "Returns true if at least one element meets the condition (Non static).",
+                            "syntax": "arr.some(item => item > 3);",
+                            "example": "// true"
+                        },
+                        {
+                            "title": ".every()",
+                            "description": "Returns true if all elements meet the condition (Non static).",
+                            "syntax": "arr.every(item => item > 3);",
+                            "example": "// false"
+                        },
+                        {
+                            "title": ".sort()",
+                            "description": "Sorts the array in place, modifying the original (Non static).",
+                            "syntax": "arr.sort((a, b) => a - b);",
+                            "example": "// [4, 2, 1, 3] => [1, 2, 3, 4]"
+                        },
+                        {
+                            "title": ".toString()",
+                            "description": "Converts the array into a comma-separated string (Non static).",
+                            "syntax": "arr.toString();",
+                            "example": "// '1,2,3'"
+                        },
+                        {
+                            "title": ".fill()",
+                            "description": "Fills all or part of the array with a static value (Non static).",
+                            "syntax": "arr.fill(0, 1, 3);",
+                            "example": "// [1, 0, 0, 4]"
+                        },
+                        {
+                            "title": ".at()",
+                            "description": "Returns the element at the given index, supporting negative indexes (Non static).",
+                            "syntax": "arr.at(-1);",
+                            "example": "// Last element"
+                        },
+                        {
+                            "title": "Array.fromAsync()",
+                            "description": "Creates an array from an async source, like an async iterable (Static).",
+                            "syntax": "const arr = await Array.fromAsync(asyncIterable);"
+                        },
+                        {
+                            "title": ".toReversed()",
+                            "description": "Returns a reversed copy of the array without mutating the original (Non static, ES2023).",
+                            "syntax": "arr.toReversed();",
+                            "example": "// [1, 2, 3] => [3, 2, 1]"
+                        },
+                        {
+                            "title": ".toSorted()",
+                            "description": "Returns a sorted copy of the array without mutating the original (Non static, ES2023).",
+                            "syntax": "arr.toSorted();",
+                            "example": "// [3, 1, 2] => [1, 2, 3]"
+                        },
+                        {
+                            "title": ".toSpliced()",
+                            "description": "Returns a copy of the array with elements added or removed, without mutating the original (Non static, ES2023).",
+                            "syntax": "arr.toSpliced(1, 2);",
+                            "example": "// [1, 2, 3, 4] => [1, 4]"
+                        },
+                        {
+                            "title": ".copyWithin()",
+                            "description": "Copies a section of the array to another location within the same array (Mutates).",
+                            "syntax": "arr.copyWithin(0, 2);",
+                            "example": "// [3, 4, 3, 4]"
+                        },
+                        {
+                            "title": ".entries()",
+                            "description": "Returns an iterator with key/value pairs for each index (Non static).",
+                            "syntax": "for (const [index, value] of arr.entries()) { }"
+                        },
+                        {
+                            "title": ".keys()",
+                            "description": "Returns an iterator with the keys (indexes) of the array (Non static).",
+                            "syntax": "for (const key of arr.keys()) { }"
+                        },
+                        {
+                            "title": ".values()",
+                            "description": "Returns an iterator with the values of the array (Non static).",
+                            "syntax": "for (const value of arr.values()) { }"
+                        },
+                        {
+                            "title": ".flatMap()",
+                            "description": "Maps each element and flattens the result one level (Non static).",
+                            "syntax": "arr.flatMap(num => [num, num * 2]);",
+                            "example": "// [1, 2, 2, 4, 3, 6]"
+                        }
                     ]
                 },
                 {
-                    "title": "Nesting & Spread",
-                    "description": "Structuring and extracting elements.",
-                    "content": [
-                        
-                    ]
+                    "title": "Spread",
+                    "description": "Used to combine multiple arrays into a new one",
+                    "syntax": "const newArr = [...numbers, ...names];",
+                    "example": "// [1, 2, 3, John, Thomas, Arthur]"
+                },
+                {
+                    "title": "Destructuring",
+                    "description": "Extract values from arrays into separate variables.",
+                    "syntax": "const [a, b] = arr;",
+                    "example": "// a = 1, b = 2"
                 }
             ]
         },
@@ -386,7 +617,7 @@
                     ]
                 },
                 {
-                    "title": "Methods",
+                    "title": "Object Methods",
                     "description": "Different methods to manipulate the objects.",
                     "nestIcon": "fa-plus",
                     "content": [
