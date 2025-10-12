@@ -11,13 +11,13 @@
                     "title": "const",
                     "description": "Declare a constant variable that cannot be reassigned.",     
                     "syntax": "const x = 1;",
-                    "example": "x = 2; Will return an error."
+                    "example": "x = 2;\n Will return an error."
                 },
                 {
                     "title": "let",
                     "description": "Declare a variable that can be reassigned.",       
                     "syntax": "let x = 1;",
-                    "example": "x = 2; x is now 2."  
+                    "example": "x = 2;\n x is now 2."  
                 },
                 {
                     "title": "Primitive Data Types",
@@ -27,7 +27,7 @@
                         {
                             "title": "String",
                             "description": "A sequence of characters.",      
-                            "syntax": "const firstName = 'John';"
+                            "syntax": "const name = 'John';"
                               
                         },
                         {
@@ -50,7 +50,7 @@
                         {
                             "title": "Undefined",
                             "description": "A variable without a value.",
-                            "syntax": "let score = undefined;"
+                            "syntax": "let x = undefined;"
                         },
                         {
                             "title": "Symbol",
@@ -60,7 +60,7 @@
                         {
                             "title": "BigInt",
                             "description": "Greater then what the number type handles.",
-                            "syntax": "const n = 9007199254740991n;"
+                            "syntax": "const n =\n 9007199254740991n;"
                         }
                     ]
                 },
@@ -72,17 +72,17 @@
                         {
                             "title": "Arrays",
                             "description": "Data structure that holds multiple values.",
-                            "syntax": "const numbers = [1, 2, 3];"
+                            "syntax": "const numbers =\n [1, 2, 3];"
                         },
                         {
                             "title": "Functions",
                             "description": "Reusable pieces of code that perform tasks.",
-                            "syntax": "const sayHello = function () { return 'Hello' }"
+                            "syntax": "const sayHello =\n function () {\n return 'Hello' \n};"
                         },
                         {
                             "title": "Objects",
                             "description": "Comma seperated lists of key-value pairs.",
-                            "syntax": "{ name: 'John', age: 30, hasKids: true }"
+                            "syntax": "{\n name: 'John',\n age: 30,\n hasKids: true \n}"
                         }
                     ]
                 },
@@ -254,12 +254,12 @@
                         {
                             "title": "console.error();",
                             "description": "Makes the text red.",
-                            "syntax": "console.error('This is an error');"
+                            "syntax": "console.error('Error');"
                         },
                         {
                             "title": "console.warn();",
                             "description": "Makes the text yellow.",
-                            "syntax": "console.error('This is a warning');"
+                            "syntax": "console.warn('Warning');"
                         }
                     ]
                 },
@@ -347,18 +347,18 @@
                 {
                     "title": "Mixed Values",
                     "description": "Arrays can have any kinds of values.",
-                    "syntax": "const mixed = [1, 'John', null, true];"
+                    "syntax": "const mixed =\n [1, 'John', null, true];"
                 },
                 {
                     "title": "Nesting",
                     "description": "Arrays can be nested inside each other.",
-                    "syntax": "const arr = [1, 2, [3, 4]];",
+                    "syntax": "const arr =\n [1, 2, [3, 4]];",
                     "example": "arr[2][1]; // 4"
                 },
                 {
                     "title": "Array Iteration",
                     "description": "Use loops or array methods to run code on each element.",
-                    "syntax": "for (const item of arr) { console.log(item); }"
+                    "syntax": "for (const item of arr) {\n console.log(item); \n};"
                 },
                 {
                     "title": "Array Methods",
@@ -420,8 +420,8 @@
                         {
                             "title": ".join()",
                             "description": "Returns the elements as a string with a separator (Non static).", 
-                            "syntax": "arr.join(' and ');",
-                            "example": "// '1 and 2 and 3 and 4'"
+                            "syntax": "arr.join(', ');",
+                            "example": "// '1, 2, 3, 4'"
                         },
                         {
                             "title": ".slice()",
@@ -445,7 +445,7 @@
                             "title": ".flat()",
                             "description": "Removes the brackets from nested arrays, 'Infinity' to remove from all levels (Non static).", 
                             "syntax": "arr.flat(Infinity)",
-                            "example": "// [[1, 2], [3, 4]] => [1, 2, 3, 4]"
+                            "example": "// [[1, 2], [3, 4]] =>\n [1, 2, 3, 4]"
                         },
                         {
                             "title": ".isArray()",
@@ -457,66 +457,66 @@
                             "title": ".from()",
                             "description": "Convert an array like object into an array (Static).",
                             "syntax": "Array.from(string);",
-                            "example": "// ['H', 'e', 'l', 'l', 'o']"
+                            "example": "// ['J', 'o', 'h', 'n']"
                         },
                         {
                             "title": ".of()",
                             "description": "Create an array from a variable number of arguments (Static).",
-                            "syntax": "Array.of('John', 30, true);",
-                            "example": "// ['John', 30, true]"
+                            "syntax": "Array.of('John', 30);",
+                            "example": "// ['John', 30]"
                         },
                         {
                             "title": ".forEach()",
                             "description": "Used to apply code to each element in the array (Non static).",
-                            "syntax": "items.forEach((item) => {code...})"
+                            "syntax": "items.forEach((item) =>\n {code...})"
                         },
                         {
                             "title": ".filter()",
                             "description": "Returns an array of items that meet the condition that is passed (Non static).",
-                            "syntax": "arr.filter((item) => item % 2 === 0);",
+                            "syntax": "arr.filter((item) =>\n item % 2 === 0);",
                             "example": "// [2, 4]"
                         },
                         {
                             "title": ".map()",
                             "description": "Returns an array that is the result of a function called on each element (Non static).",
-                            "syntax": "arr.map((item) => item * 2);",
+                            "syntax": "arr.map((item) =>\n item * 2);",
                             "example": "// [2, 4, 6, 8]"
                         },
                         {
                             "title": ".reduce()",
                             "description": "Reduces the array to a single value by running a function on each element (Non static).",
-                            "syntax": "arr.reduce((acc, curr) => acc + curr, 0);",
+                            "syntax": "arr.reduce((acc, curr) =>\n acc + curr, 0);",
                             "example": "// [1, 2, 3, 4] => 10"
                         },
                         {
                             "title": ".find()",
                             "description": "Returns the first element that matches a condition (Non static).",
-                            "syntax": "arr.find(item => item > 3);",
+                            "syntax": "arr.find(item =>\n item > 3);",
                             "example": "// 4"
                         },
                         {
                             "title": ".findIndex()",
                             "description": "Returns the index of the first element that matches a condition (Non static).",
-                            "syntax": "arr.findIndex(item => item > 3);",
+                            "syntax": "arr.findIndex(item =>\n item > 3);",
                             "example": "// 3"
                         },
                         {
                             "title": ".some()",
                             "description": "Returns true if at least one element meets the condition (Non static).",
-                            "syntax": "arr.some(item => item > 3);",
+                            "syntax": "arr.some((item) => {\nitem > 3;\n)};",
                             "example": "// true"
                         },
                         {
                             "title": ".every()",
                             "description": "Returns true if all elements meet the condition (Non static).",
-                            "syntax": "arr.every(item => item > 3);",
+                            "syntax": "arr.every((item) => {\nitem > 3;\n)};",
                             "example": "// false"
                         },
                         {
                             "title": ".sort()",
                             "description": "Sorts the array in place, modifying the original (Non static).",
                             "syntax": "arr.sort((a, b) => a - b);",
-                            "example": "// [4, 2, 1, 3] => [1, 2, 3, 4]"
+                            "example": "// [4, 2, 1, 3] =>\n [1, 2, 3, 4]"
                         },
                         {
                             "title": ".toString()",
@@ -539,25 +539,25 @@
                         {
                             "title": "Array.fromAsync()",
                             "description": "Creates an array from an async source, like an async iterable (Static).",
-                            "syntax": "const arr = await Array.fromAsync(asyncIterable);"
+                            "syntax": "const arr =\n await Array.fromAsync(asyncIterable);"
                         },
                         {
                             "title": ".toReversed()",
                             "description": "Returns a reversed copy of the array without mutating the original (Non static, ES2023).",
                             "syntax": "arr.toReversed();",
-                            "example": "// [1, 2, 3] => [3, 2, 1]"
+                            "example": "// [1, 2, 3] =>\n [3, 2, 1]"
                         },
                         {
                             "title": ".toSorted()",
                             "description": "Returns a sorted copy of the array without mutating the original (Non static, ES2023).",
                             "syntax": "arr.toSorted();",
-                            "example": "// [3, 1, 2] => [1, 2, 3]"
+                            "example": "// [3, 1, 2] =>\n [1, 2, 3]"
                         },
                         {
                             "title": ".toSpliced()",
                             "description": "Returns a copy of the array with elements added or removed, without mutating the original (Non static, ES2023).",
                             "syntax": "arr.toSpliced(1, 2);",
-                            "example": "// [1, 2, 3, 4] => [1, 4]"
+                            "example": "// [1, 2, 3, 4] =>\n [1, 4]"
                         },
                         {
                             "title": ".copyWithin()",
@@ -591,8 +591,8 @@
                 {
                     "title": "Spread",
                     "description": "Used to combine multiple arrays into a new one",
-                    "syntax": "const newArr = [...numbers, ...names];",
-                    "example": "// [1, 2, 3, John, Thomas, Arthur]"
+                    "syntax": "const newArr =\n [...numbers, ...names];",
+                    "example": "// [1, 2, John, Tom]"
                 },
                 {
                     "title": "Destructuring",
@@ -610,26 +610,134 @@
             "description": "Create collections of related data and functionality using key-value pairs, useful for modeling real-world entities.",
             "cards": [
                 {
-                    "title": "Basics",
-                    "description": "The basics of creating and accessing objects.",
-                    "content": [
-                        
-                    ]
+                    "title": "Creating an Object",
+                    "description": "Objects store data in key-value pairs. Keys are also called properties.",
+                    "syntax": "const person = { name: 'John', age: 30, job: 'developer' };"
+                },
+                {
+                    "title": "Accessing Properties",
+                    "description": "Access with dot or bracket notation.",
+                    "syntax": "person.age;",
+                    "example": "// 30"
+                },
+                {
+                    "title": "Nested Objects",
+                    "description": "Objects can contain other objects or arrays.",
+                    "syntax": "const user = { name: 'Alice', address: { city: 'NY', zip: 10001 } };",
+                    "example": "user.address.city; // 'NY'"
+                },
+                {
+                    "title": "Adding & Modifying Properties",
+                    "description": "Objects can be updated or expanded dynamically.",
+                    "syntax": "person.country = 'USA';\nperson.age = 31;"
+                },
+                {
+                    "title": "Deleting Properties",
+                    "description": "Remove properties using the delete keyword.",
+                    "syntax": "delete person.job;"
                 },
                 {
                     "title": "Object Methods",
                     "description": "Different methods to manipulate the objects.",
                     "nestIcon": "fa-plus",
                     "content": [
-                        
+                        {
+                            "title": "Object.keys()",
+                            "description": "Returns an array of the object's keys.",
+                            "syntax": "Object.keys(person);",
+                            "example": "// ['name', 'age', 'job']"
+                        },
+                        {
+                            "title": "Object.values()",
+                            "description": "Returns an array of the object's values.",
+                            "syntax": "Object.values(person);",
+                            "example": "// ['John', 30, 'developer']"
+                        },
+                        {
+                            "title": "Object.entries()",
+                            "description": "Returns an array of key-value pairs.",
+                            "syntax": "Object.entries(person);",
+                            "example": "// [['name', 'John'], ['age', 30]]"
+                        },
+                        {
+                            "title": "Object.assign()",
+                            "description": "Copies properties from one object to another.",
+                            "syntax": "Object.assign(target, source);"
+                        },
+                        {
+                            "title": "Object.freeze()",
+                            "description": "Prevents adding, removing, or changing properties.",
+                            "syntax": "Object.freeze(person);"
+                        },
+                        {
+                            "title": "Object.seal()",
+                            "description": "Prevents adding or removing properties but allows changes to existing ones.",
+                            "syntax": "Object.seal(person);"
+                        },
+                        {
+                            "title": "Object.defineProperty()",
+                            "description": "Defines or modifies a property with control over enumerability, writability, or configurability.",
+                            "syntax": "Object.defineProperty(person, 'age', { writable: false });"
+                        },
+                        {
+                            "title": "Object.hasOwn()",
+                            "description": "Checks if an object has a specific property (ES2022).",
+                            "syntax": "Object.hasOwn(person, 'age');",
+                            "example": "// true"
+                        },
+                        {
+                            "title": "Object.fromEntries()",
+                            "description": "Creates an object from an array of key-value pairs.",
+                            "syntax": "Object.fromEntries([['name', 'John'], ['age', 30]]);"
+                        },
+                        {
+                            "title": "Object.create()",
+                            "description": "Creates a new object using another object as its prototype.",
+                            "syntax": "const newObj = Object.create(person);"
+                        }
                     ]
                 },
                 {
-                    "title": "Destructuring & Spread",
-                    "description": "Structuring and extracting elements.",
-                    "content": [
-                        
-                    ]
+                    "title": "Object Destructuring",
+                    "description": "Extract specific properties into variables.",
+                    "syntax": "const { name, age } = person;",
+                    "example": "// name = 'John', age = 30"
+                },
+                {
+                    "title": "Renaming During Destructuring",
+                    "description": "Rename properties while destructuring.",
+                    "syntax": "const { name: fullName } = person;",
+                    "example": "// fullName = 'John'"
+                },
+                {
+                    "title": "Default Values",
+                    "description": "Set defaults if the property doesn't exist.",
+                    "syntax": "const { country = 'Unknown' } = person;"
+                },
+                {
+                    "title": "Spread Operator",
+                    "description": "Copy or merge objects.",
+                    "syntax": "const newPerson = { ...person, country: 'USA' };"
+                },
+                {
+                    "title": "Rest Operator",
+                    "description": "Group remaining properties into a new object.",
+                    "syntax": "const { name, ...info } = person;"
+                },
+                {
+                    "title": "this Keyword",
+                    "description": "Refers to the object that owns the method.",
+                    "syntax": "const user = { name: 'Alice', greet() { console.log(this.name); } };"
+                },
+                {
+                    "title": "Getters and Setters",
+                    "description": "Allow defining computed or controlled property access.",
+                    "syntax": "const obj = { get area() { return this.x * this.y; } };"
+                },
+                {
+                    "title": "Object References",
+                    "description": "Objects are assigned by reference, not by value.",
+                    "syntax": "const a = { name: 'John' }; const b = a; b.name = 'Mike'; // a.name is now 'Mike'"
                 }
             ]
         },
@@ -641,20 +749,66 @@
             "description": "Control the flow of your programs with if/else and switch statements, allowing your code to react to different conditions.",
             "cards": [
                 {
-                    "title": "If Statements",
-                    "description": "Runs code if a condition is true."
+                    "title": "if Statement",
+                    "description": "Executes a block of code if the condition is true.",
+                    "syntax": "if (x > 10) {\n  console.log('Greater than 10');\n}"
                 },
                 {
-                    "title": "Switch",
-                    "description": "Tests a value against multiple cases."
+                    "title": "if...else Statement",
+                    "description": "Adds an alternative block of code if the condition is false.",
+                    "syntax": "if (x > 10) {\n  console.log('Greater');\n} else {\n  console.log('Not greater');\n}"
+                },
+                {
+                    "title": "else if Statement",
+                    "description": "Checks multiple conditions in sequence.",
+                    "syntax": "if (x > 10) {\n  console.log('Greater');\n} else if (x === 10) {\n  console.log('Equal');\n} else {\n  console.log('Less');\n}"
                 },
                 {
                     "title": "Ternary Operator",
-                    "description": "Shorthand for if-else."
+                    "description": "A shorthand way to write simple if...else statements.",
+                    "syntax": "const result = x > 10 ? 'Greater' : 'Not greater';"
+                },
+                {
+                    "title": "Switch Statement",
+                    "description": "Checks multiple possible values of an expression and runs the matching case.",
+                    "syntax": "switch (day) {\n  case 'Mon': console.log('Start'); break;\n  case 'Fri': console.log('End'); break;\n  default: console.log('Midweek');\n}"
                 },
                 {
                     "title": "Logical Operators",
-                    "description": "Combine conditions using symbols."
+                    "description": "Used to combine or invert conditions.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+                            "title": "&& (AND)",
+                            "description": "True only if both conditions are true.",
+                            "syntax": "if (x > 5 && y < 10) console.log('Both true');"
+                        },
+                        {
+                            "title": "|| (OR)",
+                            "description": "True if at least one condition is true.",
+                            "syntax": "if (x > 5 || y < 10) console.log('One is true');"
+                        },
+                        {
+                            "title": "! (NOT)",
+                            "description": "Inverts the truth value of a condition.",
+                            "syntax": "if (!isActive) console.log('Inactive');"
+                        }
+                    ]
+                },
+                {
+                    "title": "Nullish Coalescing Operator (??)",
+                    "description": "Returns the right-hand value only if the left-hand is null or undefined.",
+                    "syntax": "let name = userName ?? 'Guest';"
+                },
+                {
+                    "title": "Optional Chaining (?.)",
+                    "description": "Safely access deeply nested properties without throwing errors.",
+                    "syntax": "console.log(user?.address?.city);"
+                },
+                {
+                    "title": "Short-Circuit Evaluation",
+                    "description": "Uses logical operators to set defaults or conditionally execute code.",
+                    "syntax": "user && console.log(user.name);\nconst name = user.name || 'Guest';"
                 }
             ]
         },
@@ -663,7 +817,84 @@
             "name": "Loops",
             "icon": "fa-arrows-spin",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Automate repetitive tasks by running blocks of code multiple times until a specific condition is met."
+            "description": "Loops repeatedly execute code as long as a condition is met, allowing automation and iteration through data structures like arrays or objects.",
+            "cards": [
+                {
+                    "title": "for Loop",
+                    "description": "Runs a block of code a specific number of times.",
+                    "syntax": "for (let i = 0; i < 5; i++) {\n  console.log(i);\n}",
+                    "example": "// 0 1 2 3 4"
+                },
+                {
+                    "title": "while Loop",
+                    "description": "Runs as long as the condition is true.",
+                    "syntax": "let i = 0;\nwhile (i < 5) {\n  console.log(i);\n  i++;\n}"
+                },
+                {
+                    "title": "do...while Loop",
+                    "description": "Runs the block once before checking the condition.",
+                    "syntax": "let i = 0;\ndo {\n  console.log(i);\n  i++;\n} while (i < 5);"
+                },
+                {
+                    "title": "for...of Loop",
+                    "description": "Iterates over values of iterable objects like arrays, strings, or maps.",
+                    "syntax": "const arr = [10, 20, 30];\nfor (const num of arr) {\n  console.log(num);\n}",
+                    "example": "// 10 20 30"
+                },
+                {
+                    "title": "for...in Loop",
+                    "description": "Iterates over the keys (property names) of an object.",
+                    "syntax": "const user = { name: 'John', age: 30 };\nfor (const key in user) {\n  console.log(key);\n}",
+                    "example": "// name, age"
+                },
+                {
+                    "title": "Loop Control Statements",
+                    "description": "Used to control or alter loop execution.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+                            "title": "break",
+                            "description": "Immediately exits the loop.",
+                            "syntax": "for (let i = 0; i < 10; i++) {\n  if (i === 5) break;\n  console.log(i);\n}"
+                        },
+                        {
+                            "title": "continue",
+                            "description": "Skips the current iteration and continues to the next.",
+                            "syntax": "for (let i = 0; i < 5; i++) {\n  if (i === 2) continue;\n  console.log(i);\n}"
+                        }
+                    ]
+                },
+                {
+                    "title": "Nested Loops",
+                    "description": "Loops inside other loops, often used for multi-dimensional data.",
+                    "syntax": "for (let i = 0; i < 3; i++) {\n  for (let j = 0; j < 2; j++) {\n    console.log(i, j);\n  }\n}"
+                },
+                {
+                    "title": "Iterating Arrays with Loops",
+                    "description": "Common looping patterns used with arrays.",
+                    "nestIcon": "fa-plus",
+                    "content": [
+                        {
+                            "title": "Standard for Loop",
+                            "syntax": "for (let i = 0; i < arr.length; i++) console.log(arr[i]);"
+                        },
+                        {
+                            "title": "for...of Loop",
+                            "syntax": "for (const item of arr) console.log(item);"
+                        }
+                    ]
+                },
+                {
+                        "title": "Looping Over Strings",
+                        "description": "Strings are iterable, allowing you to loop over each character.",
+                        "syntax": "for (const char of 'Hello') {\n  console.log(char);\n}"
+                },
+                {
+                        "title": "Infinite Loops (⚠️)",
+                        "description": "Loops without a proper stopping condition can run forever and freeze the program.",
+                        "syntax": "while (true) {\n  console.log('Never ends');\n}"
+                }
+            ]
         },
         {
             "id": "functions",

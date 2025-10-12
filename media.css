@@ -12,7 +12,9 @@
         gap: 5px;
     }
 
-    #top h1 {font-size:1.7rem;}
+    #top h1 {font-size:1.8rem;}
+
+    #hide-rest {display: none;}
 
     #logo-link img {
         width: 45px;
@@ -22,17 +24,24 @@
         width: 37px;
     }
 
-    .cards {grid-template-columns:1fr;}
+    .cards {
+        grid-template-columns:1fr;
+        width: 100%;
+    }
 
     #intro-box {
         min-height: 320px;
         font-size: 1.5rem;
         line-height: 3rem;
         padding: 22px;
+        width: 100%;
     }
+
+    #intro-box pre {font-size: 1.3rem;}
 
     #intro-text {
         font-size: 1.2rem;
+        width: 100%;
     }
 
     #side-menu {

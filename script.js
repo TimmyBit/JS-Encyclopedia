@@ -133,6 +133,7 @@ const displayCardContent = async (title) => {
 
 // Display nested cards
 const displayNestedCards = async (title) => {
+    introBox.innerHTML = '<h2></h2>';
     const data = await fetchJSON('./data.json');
     if (!data) return;
 

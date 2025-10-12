@@ -213,7 +213,6 @@ body {
 #intro-box {
     background: radial-gradient(ellipse at center, #1463ff 0%, #9103dd 100%, #c636d9 100%);
     width: 70%;
-    min-width: 410px;
     min-height: 550px;
     display: flex;
     flex-direction: column;
@@ -278,7 +277,6 @@ body {
     font-size: 1.5rem;
     color: #b0b0b0;
     width: 70%;
-    min-width: 410px;
 }
 
 /* Cards layout */
@@ -287,7 +285,6 @@ body {
     grid-template-columns: repeat(3,1fr);
     gap: 28px;
     width: 70%;
-    min-width: 410px;
 }
 
 .intro-card {
