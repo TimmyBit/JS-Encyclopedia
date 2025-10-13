@@ -227,6 +227,7 @@ body {
     font-size: 2.5rem;
     line-height: 4.5rem;
     padding: 50px;
+    overflow: hidden;
 }
 
 #intro-box i {
@@ -277,6 +278,26 @@ body {
     font-size: 1.5rem;
     color: #b0b0b0;
     width: 70%;
+}
+
+/* Syntax text */
+.syntax,
+.example {
+    text-align: left;
+    display: block;
+    font-family: monospace;
+    background: #111;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    max-width: 100%;
+    overflow-x: auto;
+    width: fit-content;
+    margin: auto;
 }
 
 /* Cards layout */
@@ -369,3 +390,4 @@ footer {
     width: 0;
     height: 0;
 }
+

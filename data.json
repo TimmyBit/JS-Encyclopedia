@@ -11,13 +11,13 @@
                     "title": "const",
                     "description": "Declare a constant variable that cannot be reassigned.",     
                     "syntax": "const x = 1;",
-                    "example": "x = 2;\n Will return an error."
+                    "example": "x = 2; Will return an error."
                 },
                 {
                     "title": "let",
                     "description": "Declare a variable that can be reassigned.",       
                     "syntax": "let x = 1;",
-                    "example": "x = 2;\n x is now 2."  
+                    "example": "x = 2; x is now 2."  
                 },
                 {
                     "title": "Primitive Data Types",
@@ -60,7 +60,7 @@
                         {
                             "title": "BigInt",
                             "description": "Greater then what the number type handles.",
-                            "syntax": "const n =\n 9007199254740991n;"
+                            "syntax": "const n = 9007199254740991n;"
                         }
                     ]
                 },
@@ -72,17 +72,17 @@
                         {
                             "title": "Arrays",
                             "description": "Data structure that holds multiple values.",
-                            "syntax": "const numbers =\n [1, 2, 3];"
+                            "syntax": "const numbers = [1, 2, 3];"
                         },
                         {
                             "title": "Functions",
                             "description": "Reusable pieces of code that perform tasks.",
-                            "syntax": "const sayHello =\n function () {\n return 'Hello' \n};"
+                            "syntax": "const sayHello = function () { return 'Hello' };"
                         },
                         {
                             "title": "Objects",
                             "description": "Comma seperated lists of key-value pairs.",
-                            "syntax": "{\n name: 'John',\n age: 30,\n hasKids: true \n}"
+                            "syntax": "{ name: 'John', age: 30, hasKids: true }"
                         }
                     ]
                 },
@@ -347,18 +347,18 @@
                 {
                     "title": "Mixed Values",
                     "description": "Arrays can have any kinds of values.",
-                    "syntax": "const mixed =\n [1, 'John', null, true];"
+                    "syntax": "const mixed = [1, 'John', null, true];"
                 },
                 {
                     "title": "Nesting",
                     "description": "Arrays can be nested inside each other.",
-                    "syntax": "const arr =\n [1, 2, [3, 4]];",
+                    "syntax": "const arr = [1, 2, [3, 4]];",
                     "example": "arr[2][1]; // 4"
                 },
                 {
                     "title": "Array Iteration",
                     "description": "Use loops or array methods to run code on each element.",
-                    "syntax": "for (const item of arr) {\n console.log(item); \n};"
+                    "syntax": "for (const item of arr) { console.log(item); };"
                 },
                 {
                     "title": "Array Methods",
@@ -445,7 +445,7 @@
                             "title": ".flat()",
                             "description": "Removes the brackets from nested arrays, 'Infinity' to remove from all levels (Non static).", 
                             "syntax": "arr.flat(Infinity)",
-                            "example": "// [[1, 2], [3, 4]] =>\n [1, 2, 3, 4]"
+                            "example": "// [[1, 2], [3, 4]] => [1, 2, 3, 4]"
                         },
                         {
                             "title": ".isArray()",
@@ -468,55 +468,55 @@
                         {
                             "title": ".forEach()",
                             "description": "Used to apply code to each element in the array (Non static).",
-                            "syntax": "items.forEach((item) =>\n {code...})"
+                            "syntax": "items.forEach((item) => {code...})"
                         },
                         {
                             "title": ".filter()",
                             "description": "Returns an array of items that meet the condition that is passed (Non static).",
-                            "syntax": "arr.filter((item) =>\n item % 2 === 0);",
+                            "syntax": "arr.filter((item) => item % 2 === 0);",
                             "example": "// [2, 4]"
                         },
                         {
                             "title": ".map()",
                             "description": "Returns an array that is the result of a function called on each element (Non static).",
-                            "syntax": "arr.map((item) =>\n item * 2);",
+                            "syntax": "arr.map((item) => item * 2);",
                             "example": "// [2, 4, 6, 8]"
                         },
                         {
                             "title": ".reduce()",
                             "description": "Reduces the array to a single value by running a function on each element (Non static).",
-                            "syntax": "arr.reduce((acc, curr) =>\n acc + curr, 0);",
+                            "syntax": "arr.reduce((acc, curr) => acc + curr, 0);",
                             "example": "// [1, 2, 3, 4] => 10"
                         },
                         {
                             "title": ".find()",
                             "description": "Returns the first element that matches a condition (Non static).",
-                            "syntax": "arr.find(item =>\n item > 3);",
+                            "syntax": "arr.find(item => item > 3);",
                             "example": "// 4"
                         },
                         {
                             "title": ".findIndex()",
                             "description": "Returns the index of the first element that matches a condition (Non static).",
-                            "syntax": "arr.findIndex(item =>\n item > 3);",
+                            "syntax": "arr.findIndex(item => item > 3);",
                             "example": "// 3"
                         },
                         {
                             "title": ".some()",
                             "description": "Returns true if at least one element meets the condition (Non static).",
-                            "syntax": "arr.some((item) => {\nitem > 3;\n)};",
+                            "syntax": "arr.some((item) => {item > 3;)};",
                             "example": "// true"
                         },
                         {
                             "title": ".every()",
                             "description": "Returns true if all elements meet the condition (Non static).",
-                            "syntax": "arr.every((item) => {\nitem > 3;\n)};",
+                            "syntax": "arr.every((item) => {item > 3;)};",
                             "example": "// false"
                         },
                         {
                             "title": ".sort()",
                             "description": "Sorts the array in place, modifying the original (Non static).",
                             "syntax": "arr.sort((a, b) => a - b);",
-                            "example": "// [4, 2, 1, 3] =>\n [1, 2, 3, 4]"
+                            "example": "// [4, 2, 1, 3] => [1, 2, 3, 4]"
                         },
                         {
                             "title": ".toString()",
@@ -537,27 +537,27 @@
                             "example": "// Last element"
                         },
                         {
-                            "title": "Array.fromAsync()",
+                            "title": ".fromAsync()",
                             "description": "Creates an array from an async source, like an async iterable (Static).",
-                            "syntax": "const arr =\n await Array.fromAsync(asyncIterable);"
+                            "syntax": "const arr = await Array.fromAsync(asyncIt);"
                         },
                         {
                             "title": ".toReversed()",
                             "description": "Returns a reversed copy of the array without mutating the original (Non static, ES2023).",
                             "syntax": "arr.toReversed();",
-                            "example": "// [1, 2, 3] =>\n [3, 2, 1]"
+                            "example": "// [1, 2, 3] => [3, 2, 1]"
                         },
                         {
                             "title": ".toSorted()",
                             "description": "Returns a sorted copy of the array without mutating the original (Non static, ES2023).",
                             "syntax": "arr.toSorted();",
-                            "example": "// [3, 1, 2] =>\n [1, 2, 3]"
+                            "example": "// [3, 1, 2] => [1, 2, 3]"
                         },
                         {
                             "title": ".toSpliced()",
                             "description": "Returns a copy of the array with elements added or removed, without mutating the original (Non static, ES2023).",
                             "syntax": "arr.toSpliced(1, 2);",
-                            "example": "// [1, 2, 3, 4] =>\n [1, 4]"
+                            "example": "// [1, 2, 3, 4] => [1, 4]"
                         },
                         {
                             "title": ".copyWithin()",
@@ -591,7 +591,7 @@
                 {
                     "title": "Spread",
                     "description": "Used to combine multiple arrays into a new one",
-                    "syntax": "const newArr =\n [...numbers, ...names];",
+                    "syntax": "const newArr = [...numbers, ...names];",
                     "example": "// [1, 2, John, Tom]"
                 },
                 {
@@ -612,7 +612,7 @@
                 {
                     "title": "Creating an Object",
                     "description": "Objects store data in key-value pairs. Keys are also called properties.",
-                    "syntax": "const person = { name: 'John', age: 30, job: 'developer' };"
+                    "syntax": "const person = { name: 'John', age: 30 };"
                 },
                 {
                     "title": "Accessing Properties",
@@ -634,7 +634,7 @@
                 {
                     "title": "Deleting Properties",
                     "description": "Remove properties using the delete keyword.",
-                    "syntax": "delete person.job;"
+                    "syntax": "delete person.age;"
                 },
                 {
                     "title": "Object Methods",
@@ -642,57 +642,57 @@
                     "nestIcon": "fa-plus",
                     "content": [
                         {
-                            "title": "Object.keys()",
-                            "description": "Returns an array of the object's keys.",
+                            "title": ".keys()",
+                            "description": "Returns an array of the object's keys (Static).",
                             "syntax": "Object.keys(person);",
-                            "example": "// ['name', 'age', 'job']"
+                            "example": "// ['name', 'age']"
                         },
                         {
-                            "title": "Object.values()",
-                            "description": "Returns an array of the object's values.",
+                            "title": ".values()",
+                            "description": "Returns an array of the object's values (Static).",
                             "syntax": "Object.values(person);",
-                            "example": "// ['John', 30, 'developer']"
+                            "example": "// ['John', 30]"
                         },
                         {
-                            "title": "Object.entries()",
-                            "description": "Returns an array of key-value pairs.",
+                            "title": ".entries()",
+                            "description": "Returns an array of key-value pairs (Static).",
                             "syntax": "Object.entries(person);",
                             "example": "// [['name', 'John'], ['age', 30]]"
                         },
                         {
-                            "title": "Object.assign()",
-                            "description": "Copies properties from one object to another.",
+                            "title": ".assign()",
+                            "description": "Copies properties from one object to another (Static).",
                             "syntax": "Object.assign(target, source);"
                         },
                         {
-                            "title": "Object.freeze()",
-                            "description": "Prevents adding, removing, or changing properties.",
+                            "title": ".freeze()",
+                            "description": "Prevents adding, removing, or changing properties (Static).",
                             "syntax": "Object.freeze(person);"
                         },
                         {
-                            "title": "Object.seal()",
-                            "description": "Prevents adding or removing properties but allows changes to existing ones.",
+                            "title": ".seal()",
+                            "description": "Prevents adding or removing properties but allows changes to existing ones (Static).",
                             "syntax": "Object.seal(person);"
                         },
                         {
-                            "title": "Object.defineProperty()",
-                            "description": "Defines or modifies a property with control over enumerability, writability, or configurability.",
+                            "title": ".defineProperty()",
+                            "description": "Defines or modifies a property with control over enumerability, writability, or configurability (Static).",
                             "syntax": "Object.defineProperty(person, 'age', { writable: false });"
                         },
                         {
-                            "title": "Object.hasOwn()",
-                            "description": "Checks if an object has a specific property (ES2022).",
+                            "title": ".hasOwn()",
+                            "description": "Checks if an object has a specific property (ES2022, Static).",
                             "syntax": "Object.hasOwn(person, 'age');",
                             "example": "// true"
                         },
                         {
-                            "title": "Object.fromEntries()",
-                            "description": "Creates an object from an array of key-value pairs.",
+                            "title": ".fromEntries()",
+                            "description": "Creates an object from an array of key-value pairs (Static).",
                             "syntax": "Object.fromEntries([['name', 'John'], ['age', 30]]);"
                         },
                         {
-                            "title": "Object.create()",
-                            "description": "Creates a new object using another object as its prototype.",
+                            "title": ".create()",
+                            "description": "Creates a new object using another object as its prototype (Static).",
                             "syntax": "const newObj = Object.create(person);"
                         }
                     ]

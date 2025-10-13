@@ -125,8 +125,16 @@ const displayCardContent = async (title) => {
     introBox.innerHTML = `
         <h2>${cardData.title}</h2>
         <p>${cardData.description || ''}</p>
-        ${cardData.syntax ? `<pre><code>${cardData.syntax}</code></pre>` : ''}
-        ${cardData.example ? `<pre><code>${cardData.example}</code></pre>` : ''}
+        ${
+            cardData.syntax
+                ? `<pre class="syntax"><code>${cardData.syntax}</code></pre>`
+                : ''
+        }
+        ${
+            cardData.example
+                ? `<pre class="example"><code>${cardData.example}</code></pre>`
+                : ''
+        }
     `;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
