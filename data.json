@@ -737,7 +737,8 @@
                 {
                     "title": "Object References",
                     "description": "Objects are assigned by reference, not by value.",
-                    "syntax": "const a = { name: 'John' }; const b = a; b.name = 'Mike'; // a.name is now 'Mike'"
+                    "syntax": "const a = { name: 'John' };\nconst b = a;\nb.name = 'Mike';",
+                    "example": "// a.name is now 'Mike'"
                 }
             ]
         },
@@ -901,14 +902,316 @@
             "name": "Functions",
             "icon": "fa-gear",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Write reusable pieces of code that accept input, perform tasks, and return results, making programs more efficient."
+            "description": "Write reusable pieces of code that accept input, perform tasks, and return results, making programs more efficient.",
+            "cards": [
+                {
+                    "title": "Creating a Function",
+                    "description": "Functions are declared using the function keyword.",
+                    "syntax": "function greet() {\n  console.log('Hello');\n}"
+                },
+                {
+                    "title": "Calling a Function",
+                    "description": "Execute the code inside the function by calling its name followed by parentheses.",
+                    "syntax": "greet();",
+                    "example": "// 'Hello'"
+                },
+                {
+                    "title": "Parameters & Arguments",
+                    "description": "Functions can accept values (parameters) that change their behavior.",
+                    "syntax": "function greet(name) {\n  console.log('Hello ' + name);\n}\n\ngreet('Alice');",
+                    "example": "// 'Hello Alice'"
+                },
+                {
+                    "title": "Return Statement",
+                    "description": "Functions can return a value back to where they were called.",
+                    "syntax": "function add(a, b) {\n  return a + b;\n}\n\nconst sum = add(2, 3);",
+                    "example": "// 5"
+                },
+                {
+                    "title": "Function Expressions",
+                    "description": "Functions can be stored in variables.",
+                    "syntax": "const greet = function() {\n  console.log('Hi');\n};\n\ngreet();"
+                },
+                {
+                    "title": "Arrow Functions",
+                    "description": "A shorter syntax introduced in ES6. Often used for callbacks and concise functions.",
+                    "syntax": "const add = (a, b) => a + b;\nconst square = x => x * x;",
+                    "example": "// add(2,3) → 5"
+                },
+                {
+                    "title": "Anonymous Functions",
+                    "description": "Functions without a name, often used as callbacks.",
+                    "syntax": "setTimeout(function() {\n  console.log('Done');\n}, 1000);"
+                },
+                {
+                    "title": "Default Parameters",
+                    "description": "Give parameters a default value if none is provided.",
+                    "syntax": "function greet(name = 'Guest') {\n  console.log('Hello ' + name);\n}",
+                    "example": "// greet() → 'Hello Guest'"
+                },
+                {
+                    "title": "Rest Parameters",
+                    "description": "Collect multiple arguments into an array.",
+                    "syntax": "function sum(...nums) {\n  return nums.reduce((a, b) => a + b);\n}\n\nsum(1,2,3);",
+                    "example": "// 6"
+                },
+                {
+                    "title": "Callback Functions",
+                    "description": "A function passed as an argument to another function.",
+                    "syntax": "function doMath(a, b, callback) {\n  return callback(a, b);\n}\n\ndoMath(2, 3, (x, y) => x * y);",
+                    "example": "// 6"
+                },
+                {
+                    "title": "Higher-Order Functions",
+                    "description": "Functions that take other functions as arguments or return them.",
+                    "syntax": "function multiplier(factor) {\n  return num => num * factor;\n}\n\nconst double = multiplier(2);\ndouble(4);",
+                    "example": "// 8"
+                },
+                {
+                    "title": "Immediately Invoked Function Expression (IIFE)",
+                    "description": "Executes immediately after being defined. Useful for scoping.",
+                    "syntax": "(function() {\n  console.log('Runs instantly');\n})();"
+                },
+                {
+                    "title": "Function Methods",
+                    "description": "Special methods and properties available on all function objects.",
+                    "icon": "fa-bolt",
+                    "nestIcon": "fa-plus",
+                    "favorite": "./img/icons8-function-50.png",
+                    "content": [
+                        {
+                            "title": ".call()",
+                            "description": "Calls a function with a specified 'this' value and individual arguments.",
+                            "syntax": "function greet() {\n  console.log('Hello ' + this.name);\n}\n\nconst person = { name: 'Alice' };\ngreet.call(person);",
+                            "example": "// 'Hello Alice'"
+                        },
+                        {
+                            "title": ".apply()",
+                            "description": "Similar to call(), but arguments are passed as an array.",
+                            "syntax": "function introduce(city, country) {\n  console.log(`${this.name} from ${city}, ${country}`);\n}\n\nconst person = { name: 'John' };\nintroduce.apply(person, ['Paris', 'France']);",
+                            "example": "// 'John from Paris, France'"
+                        },
+                        {
+                            "title": ".bind()",
+                            "description": "Creates a new function with a permanently bound 'this' value.",
+                            "syntax": "const user = { name: 'Sarah' };\nfunction greet() {\n  console.log('Hi ' + this.name);\n}\n\nconst boundGreet = greet.bind(user);\nboundGreet();",
+                            "example": "// 'Hi Sarah'"
+                        },
+                        {
+                            "title": ".toString()",
+                            "description": "Returns the function's source code as a string.",
+                            "syntax": "function add(a, b) { return a + b; }\nconsole.log(add.toString());",
+                            "example": "// 'function add(a, b) { return a + b; }'"
+                        },
+                        {
+                            "title": ".length",
+                            "description": "Property that returns the number of expected parameters.",
+                            "syntax": "function multiply(a, b, c) {}\nconsole.log(multiply.length);",
+                            "example": "// 3"
+                        },
+                        {
+                            "title": ".name",
+                            "description": "Property that returns the function's name.",
+                            "syntax": "function greet() {}\nconsole.log(greet.name);",
+                            "example": "// 'greet'"
+                        },
+                        {
+                            "title": ".constructor",
+                            "description": "References the Function() constructor that created the function object.",
+                            "syntax": "function sayHi() {}\nconsole.log(sayHi.constructor === Function);",
+                            "example": "// true"
+                        },
+                        {
+                            "title": "Function() Constructor",
+                            "description": "Used to create functions dynamically from strings (rarely used in practice).",
+                            "syntax": "const add = new Function('a', 'b', 'return a + b');\nconsole.log(add(2,3));",
+                            "example": "// 5"
+                        }
+                    ]
+                },
+                {
+                    "title": "Function Scope",
+                    "description": "Variables defined inside a function are only accessible within it.",
+                    "syntax": "function test() {\n  let x = 10;\n  console.log(x);\n}\nconsole.log(x); // Error"
+                },
+                {
+                    "title": "Hoisting",
+                    "description": "Function declarations are hoisted to the top of their scope.",
+                    "syntax": "sayHello();\nfunction sayHello() {\n  console.log('Hi');\n}"
+                },
+                {
+                    "title": "this Keyword",
+                    "description": "In regular functions, 'this' refers to the object that called it. In arrow functions, it refers to the outer scope.",
+                    "syntax": "const person = {\n  name: 'John',\n  greet() { console.log(this.name); }\n};"
+                },
+                {
+                    "title": "Constructor Functions",
+                    "description": "Used to create multiple similar objects using 'new'.",
+                    "syntax": "function Person(name, age) {\n  this.name = name;\n  this.age = age;\n}\nconst john = new Person('John', 30);"
+                }
+            ]
         },
         {
             "id": "string",
             "name": "String",
             "icon": "fa-quote-left",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Work with text using methods for searching, slicing, replacing, and formatting content."
+            "description": "Work with text using methods for searching, slicing, replacing, and formatting content.",
+            "cards": [
+                {
+                    "title": "Creating Strings",
+                    "description": "Strings can be created using single quotes, double quotes, or backticks (template literals).",
+                    "syntax": "let single = 'Hello';\nlet double = \"World\";\nlet template = `Hello ${double}`;",
+                    "example": "// 'Hello World'"
+                },
+                {
+                    "title": "Accessing Characters",
+                    "description": "Each character in a string has an index starting at 0.",
+                    "syntax": "const word = 'Hello';\nconsole.log(word[0]);\nconsole.log(word.charAt(1));",
+                    "example": "// 'H' and 'e'"
+                },
+                {
+                    "title": "String Length",
+                    "description": "Returns the number of characters in a string.",
+                    "syntax": "const word = 'Hello';\nconsole.log(word.length);",
+                    "example": "// 5"
+                },
+                {
+                    "title": "Changing Case",
+                    "description": "Convert string characters to upper or lower case.",
+                    "syntax": "let name = 'Igor';\nconsole.log(name.toUpperCase());\nconsole.log(name.toLowerCase());",
+                    "example": "// 'IGOR' and 'igor'"
+                },
+                {
+                    "title": "Extracting Parts",
+                    "description": "slice(), substring(), and substr() extract parts of a string.",
+                    "syntax": "const str = 'JavaScript';\nconsole.log(str.slice(0, 4));\nconsole.log(str.substring(4, 10));",
+                    "example": "// 'Java' and 'Script'"
+                },
+                {
+                    "title": "Searching Strings",
+                    "description": "Find positions or check if substrings exist.",
+                    "syntax": "const text = 'Learn JavaScript';\nconsole.log(text.indexOf('Java'));\nconsole.log(text.includes('Learn'));\nconsole.log(text.startsWith('Learn'));\nconsole.log(text.endsWith('Script'));",
+                    "example": "// 6, true, true, true"
+                },
+                {
+                    "title": "Replacing Text",
+                    "description": "Replace part of a string with something else.",
+                    "syntax": "const text = 'I love cats';\nconsole.log(text.replace('cats', 'dogs'));\nconsole.log(text.replaceAll('a', '@'));",
+                    "example": "// 'I love dogs' and 'I love c@ts'"
+                },
+                {
+                    "title": "Splitting and Joining",
+                    "description": "Split a string into an array or join array elements into a string.",
+                    "syntax": "const fruits = 'apple,banana,orange';\nconsole.log(fruits.split(','));\n\nconst arr = ['red', 'green', 'blue'];\nconsole.log(arr.join('-'));",
+                    "example": "// ['apple','banana','orange'] and 'red-green-blue'"
+                },
+                {
+                    "title": "Trimming Spaces",
+                    "description": "Remove whitespace from the beginning and/or end of a string.",
+                    "syntax": "const messy = '  hello  ';\nconsole.log(messy.trim());\nconsole.log(messy.trimStart());\nconsole.log(messy.trimEnd());",
+                    "example": "// 'hello'"
+                },
+                {
+                    "title": "Template Literals",
+                    "description": "Use backticks for multi-line strings and embedded expressions.",
+                    "syntax": "let name = 'Igor';\nlet greeting = `Hello, ${name}!`;\nconsole.log(greeting);",
+                    "example": "// 'Hello, Igor!'"
+                },
+                {
+                    "title": "String Methods",
+                    "icon": "fa-code",
+                    "nestIcon": "fa-plus",
+                    "favorite": "./img/icons8-code-50.png",
+                    "description": "Built-in methods used to manipulate, search, and analyze string data.",
+                    "content": [
+                        {
+                            "title": "concat()",
+                            "description": "Joins two or more strings together and returns a new string.",
+                            "syntax": "let first = 'Hello';\nlet second = 'World';\nconsole.log(first.concat(' ', second));",
+                            "example": "// 'Hello World'"
+                        },
+                        {
+                            "title": "repeat()",
+                            "description": "Returns a new string with the original repeated a given number of times.",
+                            "syntax": "console.log('ha'.repeat(3));",
+                            "example": "// 'hahaha'"
+                        },
+                        {
+                            "title": "charAt() and charCodeAt()",
+                            "description": "Returns the character or its Unicode code at a given index.",
+                            "syntax": "let word = 'Hello';\nconsole.log(word.charAt(1));\nconsole.log(word.charCodeAt(1));",
+                            "example": "// 'e' and 101"
+                        },
+                        {
+                            "title": "fromCharCode()",
+                            "description": "Converts Unicode values into characters.",
+                            "syntax": "console.log(String.fromCharCode(72, 101, 108, 108, 111));",
+                            "example": "// 'Hello'"
+                        },
+                        {
+                            "title": "includes()",
+                            "description": "Checks if a string contains a specified substring. Returns true or false.",
+                            "syntax": "let text = 'JavaScript';\nconsole.log(text.includes('Script'));",
+                            "example": "// true"
+                        },
+                        {
+                            "title": "startsWith() and endsWith()",
+                            "description": "Check if a string begins or ends with a specific substring.",
+                            "syntax": "let word = 'developer';\nconsole.log(word.startsWith('dev'));\nconsole.log(word.endsWith('per'));",
+                            "example": "// true, true"
+                        },
+                        {
+                            "title": "indexOf() and lastIndexOf()",
+                            "description": "Return the position of the first or last occurrence of a substring.",
+                            "syntax": "let msg = 'hello world hello';\nconsole.log(msg.indexOf('hello'));\nconsole.log(msg.lastIndexOf('hello'));",
+                            "example": "// 0 and 12"
+                        },
+                        {
+                            "title": "replace() and replaceAll()",
+                            "description": "Replace one or all matches of a substring or regex pattern.",
+                            "syntax": "let text = 'I like cats and cats';\nconsole.log(text.replace('cats', 'dogs'));\nconsole.log(text.replaceAll('cats', 'dogs'));",
+                            "example": "// 'I like dogs and cats' and 'I like dogs and dogs'"
+                        },
+                        {
+                            "title": "slice(), substring(), and substr()",
+                            "description": "Extract parts of a string using different rules for index handling.",
+                            "syntax": "let text = 'JavaScript';\nconsole.log(text.slice(0, 4));\nconsole.log(text.substring(4, 10));\nconsole.log(text.substr(4, 6));",
+                            "example": "// 'Java', 'Script', and 'Script'"
+                        },
+                        {
+                            "title": "split()",
+                            "description": "Splits a string into an array based on a separator.",
+                            "syntax": "let fruits = 'apple,banana,orange';\nconsole.log(fruits.split(','));",
+                            "example": "// ['apple','banana','orange']"
+                        },
+                        {
+                            "title": "trim(), trimStart(), trimEnd()",
+                            "description": "Remove whitespace from the beginning and/or end of a string.",
+                            "syntax": "let messy = '  hello  ';\nconsole.log(messy.trim());\nconsole.log(messy.trimStart());\nconsole.log(messy.trimEnd());",
+                            "example": "// 'hello'"
+                        },
+                        {
+                            "title": "padStart() and padEnd()",
+                            "description": "Add padding to the start or end of a string until it reaches a specified length.",
+                            "syntax": "let code = '5';\nconsole.log(code.padStart(3, '0'));\nconsole.log(code.padEnd(3, '0'));",
+                            "example": "// '005' and '500'"
+                        },
+                        {
+                            "title": "toUpperCase() and toLowerCase()",
+                            "description": "Convert all characters to upper or lower case.",
+                            "syntax": "let text = 'Igor';\nconsole.log(text.toUpperCase());\nconsole.log(text.toLowerCase());",
+                            "example": "// 'IGOR' and 'igor'"
+                        },
+                        {
+                            "title": "valueOf() and toString()",
+                            "description": "Return the primitive string value of a String object.",
+                            "syntax": "let strObj = new String('Hello');\nconsole.log(strObj.valueOf());\nconsole.log(strObj.toString());",
+                            "example": "// 'Hello' and 'Hello'"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "number",

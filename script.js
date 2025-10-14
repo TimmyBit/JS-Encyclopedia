@@ -17,7 +17,7 @@ const fetchJSON = async (path) => {
 
 // Recursive function to find a card by title, no matter how deep it's nested
 const findCardRecursive = (cards, title, depth = 0) => {
-    if (depth > 10) return null; // prevent runaway recursion
+    if (depth > 10) return null;
     for (const card of cards) {
         if (card.title === title) return card;
         if (Array.isArray(card.content)) {
