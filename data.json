@@ -2315,6 +2315,69 @@
             ]
         },
         {
+            "id": "async-event-loop",
+            "name": "Advanced Asynchronous Patterns & Event Loop",
+            "icon": "fa-project-diagram",
+            "favorite": "./img/icons8-rating-circled-50.png",
+            "description": "Understand how JavaScript handles asynchronous operations using the event loop, microtasks, macrotasks, and advanced patterns like async generators.",
+            "cards": [
+                {
+                    "title": "Event Loop Basics",
+                    "description": "JavaScript runs in a single thread. The event loop handles asynchronous operations by executing callbacks when the call stack is empty.",
+                    "syntax": "// Call stack: synchronous code\n// Task queue: asynchronous callbacks\nconsole.log('Start');\nsetTimeout(() => console.log('Timeout'), 0);\nconsole.log('End');",
+                    "example": "// Output: 'Start', 'End', 'Timeout'"
+                },
+                {
+                    "title": "Macrotasks vs Microtasks",
+                    "description": "Macrotasks include setTimeout, setInterval, I/O events. Microtasks include Promises and process.nextTick (Node.js). Microtasks run before the next macrotask.",
+                    "syntax": "console.log('Start');\nsetTimeout(() => console.log('Macrotask'), 0);\nPromise.resolve().then(() => console.log('Microtask'));\nconsole.log('End');",
+                    "example": "// Output: 'Start', 'End', 'Microtask', 'Macrotask'"
+                },
+                {
+                    "title": "Async/Await Under the Hood",
+                    "description": "Async functions return a Promise. `await` pauses the function until the Promise resolves, but does not block the main thread.",
+                    "syntax": "async function fetchData() {\n  console.log('Before await');\n  await Promise.resolve();\n  console.log('After await');\n}\nfetchData();\nconsole.log('End');",
+                    "example": "// Output: 'Before await', 'End', 'After await'"
+                },
+                {
+                    "title": "Promise Chaining & Error Handling",
+                    "description": "Chain Promises for sequential operations and use .catch for errors.",
+                    "syntax": "fetch('url')\n  .then(res => res.json())\n  .then(data => console.log(data))\n  .catch(err => console.error(err));",
+                    "example": "// Sequential async operations with error handling"
+                },
+                {
+                    "title": "Async Iterators & Generators",
+                    "description": "Handle streams of asynchronous data using async generators.",
+                    "syntax": "async function* fetchPages(urls) {\n  for (const url of urls) {\n    const res = await fetch(url);\n    yield await res.json();\n  }\n}\nfor await (const page of fetchPages(['a.json','b.json'])) {\n  console.log(page);\n}",
+                    "example": "// Iterate asynchronously over multiple fetch calls"
+                },
+                {
+                    "title": "setTimeout, setInterval, and clearInterval",
+                    "description": "Use timers to schedule future tasks or repeated execution.",
+                    "syntax": "const id = setTimeout(() => console.log('Delayed'), 1000);\nclearTimeout(id);\nconst intervalId = setInterval(() => console.log('Repeat'), 1000);\nclearInterval(intervalId);",
+                    "example": "// Schedule and cancel asynchronous callbacks"
+                },
+                {
+                    "title": "Concurrency Patterns",
+                    "description": "Execute multiple asynchronous operations efficiently.",
+                    "syntax": "// Run multiple Promises in parallel\nPromise.all([fetch(url1), fetch(url2)]).then(results => console.log(results));\n// Handle first resolved Promise\nPromise.race([fetch(url1), fetch(url2)]).then(result => console.log(result));",
+                    "example": "// Parallel and competitive async operations"
+                },
+                {
+                    "title": "Event Loop Visualization Tip",
+                    "description": "Use diagrams or online tools to understand the call stack, task queue, microtasks, and rendering steps.",
+                    "syntax": "// Conceptual: synchronous code runs first, microtasks next, then macrotasks, then rendering.",
+                    "example": "// Helps debug complex asynchronous behavior"
+                },
+                {
+                    "title": "Best Practices",
+                    "description": "Tips for writing efficient and safe asynchronous code.",
+                    "syntax": "1. Prefer async/await for readability.\n2. Always handle errors.\n3. Avoid long blocking synchronous code.\n4. Use Promise.all for parallel tasks when possible.\n5. Use async generators for streaming data.",
+                    "example": "// Maintain responsive, predictable asynchronous behavior"
+                }
+            ]
+        },
+        {
             "id": "error-debugging",
             "name": "Error Handling & Debugging",
             "icon": "fa-bug",
@@ -2571,6 +2634,63 @@
                     "example": "// Module usage differs slightly by environment"
                 }
             ] 
+        },
+        {
+            "id": "security-js",
+            "name": "Security Basics in JavaScript",
+            "icon": "fa-shield-alt",
+            "favorite": "./img/icons8-rating-circled-50.png",
+            "description": "Learn how to protect web applications from common JavaScript security issues like XSS, CSRF, and unsafe data handling. Includes techniques for validation and sanitization.",
+            "cards": [
+                {
+                    "title": "Cross-Site Scripting (XSS)",
+                    "description": "Occurs when malicious scripts are injected into web pages viewed by other users. Can steal data, hijack sessions, or modify content.",
+                    "syntax": "// Dangerous: inserting unsanitized user input\nconst userInput = '<img src=x onerror=alert(1)>'; \ndocument.body.innerHTML = userInput;",
+                    "example": "// Malicious code executes in the browser"
+                },
+                {
+                    "title": "Preventing XSS",
+                    "description": "Sanitize and escape user input, avoid innerHTML with untrusted data.",
+                    "syntax": "const safeText = document.createTextNode(userInput);\ndocument.body.appendChild(safeText);\n// or use libraries like DOMPurify",
+                    "example": "// Displays user input as text, not executable code"
+                },
+                {
+                    "title": "Cross-Site Request Forgery (CSRF)",
+                    "description": "Attack that tricks a user's browser into submitting unauthorized requests to a trusted site.",
+                    "syntax": "// Example: attacker triggers hidden form submission\n<form action='https://bank.com/transfer' method='POST'>\n  <input type='hidden' name='amount' value='1000'>\n</form>",
+                    "example": "// Victim unknowingly sends money"
+                },
+                {
+                    "title": "Preventing CSRF",
+                    "description": "Use anti-CSRF tokens, same-site cookies, and verify request origins on the server.",
+                    "syntax": "// Generate a token on server, send it in a hidden field, validate on server",
+                    "example": "// Server rejects requests without valid CSRF token"
+                },
+                {
+                    "title": "Input Validation",
+                    "description": "Always validate and sanitize input on both client and server sides.",
+                    "syntax": "function isValidUsername(name) {\n  return /^[a-zA-Z0-9_]{3,20}$/.test(name);\n}",
+                    "example": "// Ensures usernames contain only allowed characters"
+                },
+                {
+                    "title": "Output Encoding",
+                    "description": "Escape special characters before inserting data into HTML, CSS, or JavaScript contexts.",
+                    "syntax": "const userComment = '<script>alert(1)</script>';\nconst div = document.createElement('div');\ndiv.textContent = userComment;\ndocument.body.appendChild(div);",
+                    "example": "// Displays text safely without executing scripts"
+                },
+                {
+                    "title": "Safe Use of eval() & new Function()",
+                    "description": "Avoid executing dynamic code strings as they can lead to code injection.",
+                    "syntax": "// Unsafe: eval('alert(1)')\n// Safe alternative: use JSON.parse, functions, or controlled logic instead",
+                    "example": "// Prevents arbitrary code execution"
+                },
+                {
+                    "title": "Best Practices",
+                    "description": "General security tips for JavaScript development.",
+                    "syntax": "1. Validate and sanitize all inputs.\n2. Escape outputs in HTML, JS, CSS, and URLs.\n3. Avoid eval() and similar dynamic code execution.\n4. Use HTTPS to secure communication.\n5. Implement proper authentication and authorization.\n6. Keep libraries and dependencies up-to-date.",
+                    "example": "// Maintain a secure and robust application"
+                }
+            ]
         }
     ]
 }
