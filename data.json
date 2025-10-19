@@ -1218,63 +1218,1359 @@
             "name": "Number",
             "icon": "fa-hashtag",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Handle numeric values, perform calculations, round results, and convert between different number types."
+            "description": "Work with numeric values, perform calculations, format output, and check numerical properties.",
+            "cards": [
+                {
+                    "title": "Creating Numbers",
+                    "description": "Numbers can be created as literals or using the Number constructor.",
+                    "syntax": "let a = 42;\nlet b = 3.14;\nlet c = new Number(10);",
+                    "example": "// 42, 3.14, and [Number: 10]"
+                },
+                {
+                    "title": "Numeric Types",
+                    "description": "JavaScript has only one number type — double-precision 64-bit floating point — which includes both integers and decimals.",
+                    "syntax": "console.log(typeof 42);\nconsole.log(typeof 3.14);",
+                    "example": "// 'number' and 'number'"
+                },
+                {
+                    "title": "Checking Type",
+                    "description": "Use typeof or Number.isInteger() to check a value's numeric type.",
+                    "syntax": "console.log(typeof 5);\nconsole.log(Number.isInteger(5));",
+                    "example": "// 'number', true"
+                },
+                {
+                    "title": "Converting to Numbers",
+                    "description": "Convert other data types to numbers using Number(), parseInt(), or parseFloat().",
+                    "syntax": "Number('42');\nparseInt('3.14');\nparseFloat('3.14');",
+                    "example": "// 42, 3, and 3.14"
+                },
+                {
+                    "title": "Special Numeric Values",
+                    "description": "Infinity, -Infinity, and NaN represent special numeric constants.",
+                    "syntax": "console.log(1/0);\nconsole.log(-1/0);\nconsole.log(0/0);",
+                    "example": "// Infinity, -Infinity, NaN"
+                },
+                {
+                    "title": "Number Properties",
+                    "description": "Static constants that define numeric limits and special values.",
+                    "syntax": "Number.MAX_VALUE;\nNumber.MIN_VALUE;\nNumber.MAX_SAFE_INTEGER;\nNumber.MIN_SAFE_INTEGER;\nNumber.POSITIVE_INFINITY;\nNumber.NEGATIVE_INFINITY;\nNumber.NaN;",
+                    "example": "// 1.7976931348623157e+308, 5e-324, etc."
+                },
+                {
+                    "title": "Number Methods",
+                    "icon": "fa-code",
+                    "nestIcon": "fa-plus",
+                    "favorite": "./img/icons8-code-50.png",
+                    "description": "Built-in methods used to test, format, and convert numeric data.",
+                    "content": [
+                        {
+                            "title": "isFinite()",
+                            "description": "Checks if the given value is a finite number.",
+                            "syntax": "Number.isFinite(10);\nNumber.isFinite(Infinity);",
+                            "example": "// true, false"
+                        },
+                        {
+                            "title": "isInteger()",
+                            "description": "Checks if a value is an integer.",
+                            "syntax": "Number.isInteger(10);\nNumber.isInteger(10.5);",
+                            "example": "// true, false"
+                        },
+                        {
+                            "title": "isNaN()",
+                            "description": "Checks if the given value is NaN (Not a Number).",
+                            "syntax": "Number.isNaN('hello');\nNumber.isNaN(NaN);",
+                            "example": "// false, true"
+                        },
+                        {
+                            "title": "isSafeInteger()",
+                            "description": "Checks if the given value is a safe integer (between MIN_SAFE_INTEGER and MAX_SAFE_INTEGER).",
+                            "syntax": "Number.isSafeInteger(9007199254740991);\nNumber.isSafeInteger(9007199254740992);",
+                            "example": "// true, false"
+                        },
+                        {
+                            "title": "parseInt()",
+                            "description": "Parses a string and returns an integer. The second parameter (radix) specifies the number base.",
+                            "syntax": "Number.parseInt('101', 2);\nNumber.parseInt('15', 10);",
+                            "example": "// 5, 15"
+                        },
+                        {
+                            "title": "parseFloat()",
+                            "description": "Parses a string and returns a floating-point number.",
+                            "syntax": "Number.parseFloat('3.14');",
+                            "example": "// 3.14"
+                        },
+                        {
+                            "title": "toFixed()",
+                            "description": "Formats a number using fixed-point notation with a specific number of decimals.",
+                            "syntax": "let num = 3.14159;\nconsole.log(num.toFixed(2));",
+                            "example": "// '3.14'"
+                        },
+                        {
+                            "title": "toExponential()",
+                            "description": "Returns a string representing the number in exponential (scientific) notation.",
+                            "syntax": "let n = 12345;\nconsole.log(n.toExponential(2));",
+                            "example": "// '1.23e+4'"
+                        },
+                        {
+                            "title": "toPrecision()",
+                            "description": "Formats a number to a specified total number of digits.",
+                            "syntax": "let n = 3.14159;\nconsole.log(n.toPrecision(3));",
+                            "example": "// '3.14'"
+                        },
+                        {
+                            "title": "toString()",
+                            "description": "Converts a number to a string, optionally using a different base (radix).",
+                            "syntax": "let num = 255;\nconsole.log(num.toString(16));\nconsole.log(num.toString(2));",
+                            "example": "// 'ff' and '11111111'"
+                        },
+                        {
+                            "title": "toLocaleString()",
+                            "description": "Returns a localized string representation of the number.",
+                            "syntax": "let n = 1234567.89;\nconsole.log(n.toLocaleString('en-US'));\nconsole.log(n.toLocaleString('de-DE'));",
+                            "example": "// '1,234,567.89' and '1.234.567,89'"
+                        },
+                        {
+                            "title": "valueOf()",
+                            "description": "Returns the primitive numeric value of a Number object.",
+                            "syntax": "let n = new Number(10);\nconsole.log(n.valueOf());",
+                            "example": "// 10"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "math",
             "name": "Math",
-            "icon": "fa-square-root-variable",
+            "icon": "fa-square-root-alt",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Use JavaScript's Math object for advanced calculations, random number generation, and mathematical constants."
+            "description": "Perform mathematical operations and access constants like π (Pi) and e using the Math object. All methods are static and called as Math.method().",
+            "cards": [
+                {
+                    "title": "Math Overview",
+                    "description": "The Math object provides mathematical constants and functions. It is not a constructor, so you cannot use 'new Math()'.",
+                    "syntax": "console.log(Math.PI);\nconsole.log(Math.sqrt(16));",
+                    "example": "// 3.141592653589793 and 4"
+                },
+                {
+                    "title": "Math Constants",
+                    "description": "Predefined mathematical constants.",
+                    "syntax": "Math.E;        // Euler's number (~2.718)\nMath.PI;       // Pi (~3.14159)\nMath.SQRT2;    // √2 (~1.414)\nMath.SQRT1_2;  // √1/2 (~0.707)\nMath.LN2;      // Natural log of 2\nMath.LN10;     // Natural log of 10\nMath.LOG2E;    // Log base 2 of e\nMath.LOG10E;   // Log base 10 of e",
+                    "example": "// Use constants for precise math calculations"
+                },
+                {
+                    "title": "Rounding Methods",
+                    "description": "Round numbers up, down, or to the nearest integer.",
+                    "syntax": "Math.round(4.5);  // 5\nMath.floor(4.9); // 4\nMath.ceil(4.1);  // 5\nMath.trunc(4.9); // 4",
+                    "example": "// Different rounding behaviors"
+                },
+                {
+                    "title": "Random Numbers",
+                    "description": "Generate random numbers between 0 (inclusive) and 1 (exclusive), or use scaling for custom ranges.",
+                    "syntax": "Math.random(); // Between 0 and 1\n\n// Random integer between min and max:\nlet min = 10, max = 20;\nlet random = Math.floor(Math.random() * (max - min + 1)) + min;",
+                    "example": "// Random number between 10 and 20"
+                },
+                {
+                    "title": "Absolute and Sign",
+                    "description": "Get the absolute value or determine the sign of a number.",
+                    "syntax": "Math.abs(-10);  // 10\nMath.sign(-5);  // -1\nMath.sign(0);   // 0\nMath.sign(7);   // 1",
+                    "example": "// Useful for handling negatives"
+                },
+                {
+                    "title": "Powers and Roots",
+                    "description": "Work with squares, cubes, and arbitrary powers or roots.",
+                    "syntax": "Math.pow(2, 3);  // 8\nMath.sqrt(9);   // 3\nMath.cbrt(27);  // 3",
+                    "example": "// Power and root calculations"
+                },
+                {
+                    "title": "Min and Max",
+                    "description": "Find the smallest or largest value from a list of numbers.",
+                    "syntax": "Math.min(3, 7, 1, 9);\nMath.max(3, 7, 1, 9);",
+                    "example": "// 1 and 9"
+                },
+                {
+                    "title": "Math Methods",
+                    "icon": "fa-code",
+                    "nestIcon": "fa-plus",
+                    "favorite": "./img/icons8-code-50.png",
+                    "description": "Built-in Math methods for calculations, rounding, logarithms, trigonometry, and randomization.",
+                    "content": [
+                        {
+                            "title": "abs()",
+                            "description": "Returns the absolute (positive) value of a number.",
+                            "syntax": "Math.abs(-8);",
+                            "example": "// 8"
+                        },
+                        {
+                            "title": "sign()",
+                            "description": "Returns the sign of a number: -1, 0, or 1.",
+                            "syntax": "Math.sign(-5);\nMath.sign(0);\nMath.sign(7);",
+                            "example": "// -1, 0, 1"
+                        },
+                        {
+                            "title": "pow()",
+                            "description": "Raises a number to a specified power.",
+                            "syntax": "Math.pow(2, 3);",
+                            "example": "// 8"
+                        },
+                        {
+                            "title": "sqrt()",
+                            "description": "Returns the square root of a number.",
+                            "syntax": "Math.sqrt(16);",
+                            "example": "// 4"
+                        },
+                        {
+                            "title": "cbrt()",
+                            "description": "Returns the cube root of a number.",
+                            "syntax": "Math.cbrt(27);",
+                            "example": "// 3"
+                        },
+                        {
+                            "title": "round()",
+                            "description": "Rounds a number to the nearest integer.",
+                            "syntax": "Math.round(4.6);\nMath.round(4.3);",
+                            "example": "// 5, 4"
+                        },
+                        {
+                            "title": "floor()",
+                            "description": "Rounds a number down to the nearest integer.",
+                            "syntax": "Math.floor(4.9);",
+                            "example": "// 4"
+                        },
+                        {
+                            "title": "ceil()",
+                            "description": "Rounds a number up to the nearest integer.",
+                            "syntax": "Math.ceil(4.1);",
+                            "example": "// 5"
+                        },
+                        {
+                            "title": "trunc()",
+                            "description": "Removes the decimal part of a number, keeping only the integer part.",
+                            "syntax": "Math.trunc(4.9);",
+                            "example": "// 4"
+                        },
+                        {
+                            "title": "min()",
+                            "description": "Returns the smallest value among given numbers.",
+                            "syntax": "Math.min(3, 1, 4, 2);",
+                            "example": "// 1"
+                        },
+                        {
+                            "title": "max()",
+                            "description": "Returns the largest value among given numbers.",
+                            "syntax": "Math.max(3, 1, 4, 2);",
+                            "example": "// 4"
+                        },
+                        {
+                            "title": "random()",
+                            "description": "Returns a random number between 0 (inclusive) and 1 (exclusive).",
+                            "syntax": "Math.random();",
+                            "example": "// e.g., 0.5473"
+                        },
+                        {
+                            "title": "log()",
+                            "description": "Returns the natural logarithm (base e) of a number.",
+                            "syntax": "Math.log(Math.E);",
+                            "example": "// 1"
+                        },
+                        {
+                            "title": "log10()",
+                            "description": "Returns the base 10 logarithm of a number.",
+                            "syntax": "Math.log10(1000);",
+                            "example": "// 3"
+                        },
+                        {
+                            "title": "log2()",
+                            "description": "Returns the base 2 logarithm of a number.",
+                            "syntax": "Math.log2(8);",
+                            "example": "// 3"
+                        },
+                        {
+                            "title": "exp()",
+                            "description": "Returns e raised to the power of a number.",
+                            "syntax": "Math.exp(1);",
+                            "example": "// 2.718281828..."
+                        },
+                        {
+                            "title": "sin(), cos(), tan()",
+                            "description": "Return the trigonometric sine, cosine, or tangent of an angle (in radians).",
+                            "syntax": "Math.sin(Math.PI / 2);\nMath.cos(0);\nMath.tan(Math.PI / 4);",
+                            "example": "// 1, 1, and ~1"
+                        },
+                        {
+                            "title": "asin(), acos(), atan()",
+                            "description": "Return the arcsine, arccosine, or arctangent of a number (in radians).",
+                            "syntax": "Math.asin(1);\nMath.acos(0);\nMath.atan(1);",
+                            "example": "// ~1.57, ~1.57, ~0.78"
+                        },
+                        {
+                            "title": "atan2()",
+                            "description": "Returns the angle in radians between the positive x-axis and the point (x, y).",
+                            "syntax": "Math.atan2(3, 4);",
+                            "example": "// ~0.6435 radians"
+                        },
+                        {
+                            "title": "hypot()",
+                            "description": "Returns the square root of the sum of squares of its arguments (Pythagorean theorem).",
+                            "syntax": "Math.hypot(3, 4);",
+                            "example": "// 5"
+                        },
+                        {
+                            "title": "clz32()",
+                            "description": "Returns the number of leading zero bits in a 32-bit binary representation of a number.",
+                            "syntax": "Math.clz32(1);",
+                            "example": "// 31"
+                        },
+                        {
+                            "title": "imul()",
+                            "description": "Performs 32-bit integer multiplication (useful for bitwise operations).",
+                            "syntax": "Math.imul(2, 4);",
+                            "example": "// 8"
+                        },
+                        {
+                            "title": "fround()",
+                            "description": "Returns the nearest 32-bit single-precision float representation of a number.",
+                            "syntax": "Math.fround(1.337);",
+                            "example": "// 1.3370000123977661"
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "id": "date-&-time",
+            "id": "date",
             "name": "Date & Time",
             "icon": "fa-clock",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Manage and manipulate dates, times, and durations using the Date object and related methods."
+            "description": "Work with dates and times — create, format, compare, and extract components from Date objects.",
+            "cards": [
+                {
+                    "title": "Creating Dates",
+                    "description": "The Date object represents a specific point in time. It can be created in several ways.",
+                    "syntax": "new Date();\nnew Date(milliseconds);\nnew Date(dateString);\nnew Date(year, month, day, hours, minutes, seconds, milliseconds);",
+                    "example": "new Date();                // current date & time\nnew Date('2025-10-19');     // specific date\nnew Date(2025, 9, 19, 14);  // Oct 19, 2025 14:00"
+                },
+                {
+                    "title": "Getting the Current Date and Time",
+                    "description": "Get the current timestamp or date object representing now.",
+                    "syntax": "Date.now();     // milliseconds since Jan 1, 1970\nnew Date();        // Date object for now",
+                    "example": "// 1739999999999, Sun Oct 19 2025 14:30:00"
+                },
+                {
+                    "title": "Date Strings",
+                    "description": "Convert a date to a readable string using toString(), toDateString(), toTimeString(), or toISOString().",
+                    "syntax": "let d = new Date();\nd.toString();\nd.toDateString();\nd.toTimeString();\nd.toISOString();",
+                    "example": "// 'Sun Oct 19 2025 14:30:00 GMT-0400'\n// 'Sun Oct 19 2025'\n// '14:30:00 GMT-0400'\n// '2025-10-19T18:30:00.000Z'"
+                },
+                {
+                    "title": "Date Components",
+                    "description": "Extract or modify individual parts of a date (year, month, day, hours, etc.) using get/set methods.",
+                    "syntax": "d.getFullYear();\nd.getMonth();\nd.getDate();\nd.getHours();\nd.setFullYear(2030);",
+                    "example": "// 2025, 9, 19, 14 → sets year to 2030"
+                },
+                {
+                    "title": "Comparing Dates",
+                    "description": "Dates can be compared using their numeric value (milliseconds since 1970).",
+                    "syntax": "let a = new Date('2025-01-01');\nlet b = new Date('2025-12-31');\nconsole.log(a < b);",
+                    "example": "// true"
+                },
+                {
+                    "title": "Time Calculations",
+                    "description": "You can add or subtract time by converting dates to milliseconds.",
+                    "syntax": "let now = new Date();\nlet tomorrow = new Date(now.getTime() + 24*60*60*1000);",
+                    "example": "// adds 1 day to current date"
+                },
+                {
+                    "title": "Date Methods",
+                    "icon": "fa-code",
+                    "nestIcon": "fa-plus",
+                    "favorite": "./img/icons8-code-50.png",
+                    "description": "Methods for getting, setting, and formatting date and time values.",
+                    "content": [
+                        {
+                            "title": "getFullYear()",
+                            "description": "Returns the year (4 digits).",
+                            "syntax": "d.getFullYear();",
+                            "example": "// 2025"
+                        },
+                        {
+                            "title": "getMonth()",
+                            "description": "Returns the month (0-11). 0 = January, 11 = December.",
+                            "syntax": "d.getMonth();",
+                            "example": "// 9 (for October)"
+                        },
+                        {
+                            "title": "getDate()",
+                            "description": "Returns the day of the month (1-31).",
+                            "syntax": "d.getDate();",
+                            "example": "// 19"
+                        },
+                        {
+                            "title": "getDay()",
+                            "description": "Returns the weekday (0-6). 0 = Sunday, 6 = Saturday.",
+                            "syntax": "d.getDay();",
+                            "example": "// 0 (Sunday)"
+                        },
+                        {
+                            "title": "getHours()",
+                            "description": "Returns the hour (0-23).",
+                            "syntax": "d.getHours();",
+                            "example": "// 14"
+                        },
+                        {
+                            "title": "getMinutes()",
+                            "description": "Returns the minutes (0-59).",
+                            "syntax": "d.getMinutes();",
+                            "example": "// 30"
+                        },
+                        {
+                            "title": "getSeconds()",
+                            "description": "Returns the seconds (0-59).",
+                            "syntax": "d.getSeconds();",
+                            "example": "// 45"
+                        },
+                        {
+                            "title": "getMilliseconds()",
+                            "description": "Returns the milliseconds (0-999).",
+                            "syntax": "d.getMilliseconds();",
+                            "example": "// 123"
+                        },
+                        {
+                            "title": "getTime()",
+                            "description": "Returns the numeric value of the date in milliseconds since Jan 1, 1970.",
+                            "syntax": "d.getTime();",
+                            "example": "// 1739999999999"
+                        },
+                        {
+                            "title": "getTimezoneOffset()",
+                            "description": "Returns the time difference between UTC and local time in minutes.",
+                            "syntax": "d.getTimezoneOffset();",
+                            "example": "// -240 for UTC-4"
+                        },
+                        {
+                            "title": "setFullYear()",
+                            "description": "Sets the year for the date.",
+                            "syntax": "d.setFullYear(2030);",
+                            "example": "// changes year to 2030"
+                        },
+                        {
+                            "title": "setMonth()",
+                            "description": "Sets the month (0-11).",
+                            "syntax": "d.setMonth(11);",
+                            "example": "// sets month to December"
+                        },
+                        {
+                            "title": "setDate()",
+                            "description": "Sets the day of the month (1-31).",
+                            "syntax": "d.setDate(25);",
+                            "example": "// sets date to 25"
+                        },
+                        {
+                            "title": "setHours()",
+                            "description": "Sets the hour (0-23).",
+                            "syntax": "d.setHours(18);",
+                            "example": "// sets hour to 18 (6 PM)"
+                        },
+                        {
+                            "title": "setMinutes()",
+                            "description": "Sets the minutes (0-59).",
+                            "syntax": "d.setMinutes(45);",
+                            "example": "// sets minutes to 45"
+                        },
+                        {
+                            "title": "setSeconds()",
+                            "description": "Sets the seconds (0-59).",
+                            "syntax": "d.setSeconds(30);",
+                            "example": "// sets seconds to 30"
+                        },
+                        {
+                            "title": "setMilliseconds()",
+                            "description": "Sets the milliseconds (0-999).",
+                            "syntax": "d.setMilliseconds(500);",
+                            "example": "// sets ms to 500"
+                        },
+                        {
+                            "title": "setTime()",
+                            "description": "Sets the date and time from a timestamp (milliseconds).",
+                            "syntax": "d.setTime(Date.now());",
+                            "example": "// updates to current time"
+                        },
+                        {
+                            "title": "toDateString()",
+                            "description": "Returns only the date portion as a readable string.",
+                            "syntax": "d.toDateString();",
+                            "example": "// 'Sun Oct 19 2025'"
+                        },
+                        {
+                            "title": "toTimeString()",
+                            "description": "Returns only the time portion as a readable string.",
+                            "syntax": "d.toTimeString();",
+                            "example": "// '14:30:00 GMT-0400 (Eastern Daylight Time)'"
+                        },
+                        {
+                            "title": "toISOString()",
+                            "description": "Returns the date as an ISO 8601 string in UTC.",
+                            "syntax": "d.toISOString();",
+                            "example": "// '2025-10-19T18:30:00.000Z'"
+                        },
+                        {
+                            "title": "toLocaleDateString()",
+                            "description": "Formats the date based on locale and options.",
+                            "syntax": "d.toLocaleDateString('en-US');\nd.toLocaleDateString('fr-FR');",
+                            "example": "// '10/19/2025', '19/10/2025'"
+                        },
+                        {
+                            "title": "toLocaleTimeString()",
+                            "description": "Formats the time based on locale and options.",
+                            "syntax": "d.toLocaleTimeString('en-US');",
+                            "example": "// '2:30:00 PM'"
+                        },
+                        {
+                            "title": "toLocaleString()",
+                            "description": "Returns a localized string for both date and time.",
+                            "syntax": "d.toLocaleString('en-US');",
+                            "example": "// '10/19/2025, 2:30:00 PM'"
+                        },
+                        {
+                            "title": "valueOf()",
+                            "description": "Returns the primitive numeric value (milliseconds since 1970).",
+                            "syntax": "d.valueOf();",
+                            "example": "// 1739999999999"
+                        },
+                        {
+                            "title": "Date.now()",
+                            "description": "Static method — returns the current timestamp in milliseconds.",
+                            "syntax": "Date.now();",
+                            "example": "// 1739999999999"
+                        },
+                        {
+                            "title": "Date.parse()",
+                            "description": "Static method — parses a date string and returns the timestamp in milliseconds.",
+                            "syntax": "Date.parse('2025-10-19T12:00:00Z');",
+                            "example": "// 1760875200000"
+                        },
+                        {
+                            "title": "Date.UTC()",
+                            "description": "Static method — returns the timestamp (ms since 1970) for a UTC date.",
+                            "syntax": "Date.UTC(2025, 9, 19, 12, 0, 0);",
+                            "example": "// 1760875200000"
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "id": "dom-&-events",
+            "id": "dom-events",
             "name": "DOM & Events",
-            "icon": "fa-computer-mouse",
+            "icon": "fa-code-branch",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Dynamically update webpages and respond to user interactions through the Document Object Model and event handling."
+            "description": "Interact with and manipulate web page elements dynamically using the Document Object Model and event handling.",
+            "cards": [
+                {
+                    "title": "What is the DOM?",
+                    "description": "The DOM (Document Object Model) is a tree-like structure representing all elements of a web page that JavaScript can access and manipulate.",
+                    "syntax": "document.body;\ndocument.title;\ndocument.getElementById('header');",
+                    "example": "// Accesses the <body>, page title, and an element with id='header'"
+                },
+                {
+                    "title": "Selecting Elements",
+                    "description": "You can select elements by ID, class, tag, or using CSS selectors.",
+                    "syntax": "document.getElementById('main');\ndocument.getElementsByClassName('item');\ndocument.getElementsByTagName('li');\ndocument.querySelector('.btn');\ndocument.querySelectorAll('.list li');",
+                    "example": "// Selects various elements for manipulation"
+                },
+                {
+                    "title": "Traversing the DOM",
+                    "description": "Navigate between parent, child, and sibling elements.",
+                    "syntax": "element.parentElement;\nelement.children;\nelement.firstElementChild;\nelement.lastElementChild;\nelement.nextElementSibling;\nelement.previousElementSibling;",
+                    "example": "// Access related elements in the DOM tree"
+                },
+                {
+                    "title": "Creating and Appending Elements",
+                    "description": "Dynamically create, insert, and remove HTML elements.",
+                    "syntax": "const div = document.createElement('div');\ndiv.textContent = 'Hello';\ndocument.body.appendChild(div);\n\n// Remove element\ndiv.remove();",
+                    "example": "// Adds and removes elements dynamically"
+                },
+                {
+                    "title": "Modifying Content",
+                    "description": "Change text or HTML inside elements.",
+                    "syntax": "element.textContent = 'New Text';\nelement.innerText = 'Visible Text';\nelement.innerHTML = '<strong>Bold</strong>';",
+                    "example": "// Updates or replaces element content"
+                },
+                {
+                    "title": "Working with Attributes",
+                    "description": "Read, write, and check for HTML attributes.",
+                    "syntax": "element.getAttribute('id');\nelement.setAttribute('class', 'highlight');\nelement.hasAttribute('src');\nelement.removeAttribute('alt');",
+                    "example": "// Manage HTML element attributes"
+                },
+                {
+                    "title": "Styling Elements",
+                    "description": "Modify an element's CSS directly using the style property or classList.",
+                    "syntax": "element.style.color = 'red';\nelement.style.backgroundColor = 'black';\nelement.classList.add('active');\nelement.classList.remove('hidden');\nelement.classList.toggle('dark-mode');",
+                    "example": "// Apply or toggle visual styles"
+                },
+                {
+                    "title": "Measuring Elements",
+                    "description": "Get element size and position in the viewport.",
+                    "syntax": "element.offsetWidth;\nelement.offsetHeight;\nelement.offsetTop;\nelement.offsetLeft;\nelement.getBoundingClientRect();",
+                    "example": "// Access element dimensions and screen position"
+                },
+                {
+                    "title": "DOM Events",
+                    "icon": "fa-bolt",
+                    "nestIcon": "fa-plus",
+                    "favorite": "./img/icons8-flash-50.png",
+                    "description": "Events allow your code to respond to user actions like clicks, typing, scrolling, and more.",
+                    "content": [
+                        {
+                            "title": "addEventListener()",
+                            "description": "Attach an event handler to an element without overwriting existing ones.",
+                            "syntax": "element.addEventListener('click', function() {\n  console.log('Clicked!');\n});",
+                            "example": "// Runs function when element is clicked"
+                        },
+                        {
+                            "title": "removeEventListener()",
+                            "description": "Remove an event listener previously added with addEventListener().",
+                            "syntax": "function greet() {\n  console.log('Hello');\n}\nelement.addEventListener('click', greet);\nelement.removeEventListener('click', greet);",
+                            "example": "// Removes the click event listener"
+                        },
+                        {
+                            "title": "Common Event Types",
+                            "description": "Frequently used events for different user interactions.",
+                            "syntax": "click — mouse click\ndblclick — double click\nmouseover / mouseout — hover in/out\nkeydown / keyup — keyboard press\nsubmit — form submission\ninput — value change in input field\nscroll — page scroll\nresize — window resize\ncontextmenu — right-click menu",
+                            "example": "// Various user-triggered actions"
+                        },
+                        {
+                            "title": "Event Object",
+                            "description": "Provides details about the triggered event and the element it occurred on.",
+                            "syntax": "element.addEventListener('click', (e) => {\n  console.log(e.type);    // 'click'\n  console.log(e.target);  // clicked element\n});",
+                            "example": "// Access info about the event"
+                        },
+                        {
+                            "title": "Event Propagation",
+                            "description": "Events bubble up (from target to ancestors) or capture down (from ancestors to target).",
+                            "syntax": "element.addEventListener('click', handler, true); // capture phase\nelement.addEventListener('click', handler);     // bubble phase",
+                            "example": "// Control how events travel through the DOM"
+                        },
+                        {
+                            "title": "stopPropagation()",
+                            "description": "Stops the event from bubbling or capturing further.",
+                            "syntax": "e.stopPropagation();",
+                            "example": "// Prevents parent elements from receiving the event"
+                        },
+                        {
+                            "title": "preventDefault()",
+                            "description": "Prevents the default action associated with the event (like link navigation or form submission).",
+                            "syntax": "form.addEventListener('submit', (e) => {\n  e.preventDefault();\n  console.log('Form stopped');\n});",
+                            "example": "// Stops form from reloading the page"
+                        },
+                        {
+                            "title": "Keyboard Events",
+                            "description": "Detect key presses using keydown, keyup, or keypress.",
+                            "syntax": "document.addEventListener('keydown', (e) => {\n  console.log(e.key);\n});",
+                            "example": "// Logs the key pressed"
+                        },
+                        {
+                            "title": "Mouse Events",
+                            "description": "Detect clicks, double-clicks, hover, and movement.",
+                            "syntax": "element.addEventListener('mousemove', (e) => {\n  console.log(e.clientX, e.clientY);\n});",
+                            "example": "// Tracks mouse position"
+                        },
+                        {
+                            "title": "Form Events",
+                            "description": "React to form interactions like input changes or submission.",
+                            "syntax": "input.addEventListener('input', (e) => {\n  console.log(e.target.value);\n});\nform.addEventListener('submit', (e) => {\n  e.preventDefault();\n});",
+                            "example": "// Handles user input or form submit"
+                        },
+                        {
+                            "title": "Window Events",
+                            "description": "Attach events to the window object like load, resize, or scroll.",
+                            "syntax": "window.addEventListener('load', () => console.log('Loaded'));\nwindow.addEventListener('resize', () => console.log('Resized'));\nwindow.addEventListener('scroll', () => console.log('Scrolling...'));",
+                            "example": "// Responds to global window events"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "web-api",
-            "name": "Web API",
-            "icon": "fa-server",
+            "name": "Web APIs",
+            "icon": "fa-globe",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Extend JavaScript with browser-provided tools like LocalStorage, Fetch, Canvas, and Geolocation."
+            "description": "Browser-provided interfaces that let JavaScript interact with the environment — from network requests and storage to timing, geolocation, and more.",
+            "cards": [
+                {
+                    "title": "What are Web APIs?",
+                    "description": "Web APIs (Application Programming Interfaces) are built into browsers to provide access to browser features and web services through JavaScript.",
+                    "syntax": "fetch(), localStorage, Geolocation API, Notification API, etc.",
+                    "example": "// Allow web pages to do more than just static content"
+                },
+                {
+                    "title": "Fetch API",
+                    "description": "Used to make network requests (GET, POST, PUT, DELETE) and handle responses using Promises.",
+                    "syntax": "fetch('https://api.example.com/data')\n  .then(response => response.json())\n  .then(data => console.log(data))\n  .catch(error => console.error('Error:', error));",
+                    "example": "// Retrieves and logs JSON data from an API"
+                },
+                {
+                    "title": "JSON Handling",
+                    "description": "Convert data between JSON strings and JavaScript objects for use in APIs.",
+                    "syntax": "let obj = { name: 'Igor', age: 25 };\nlet json = JSON.stringify(obj);\nlet parsed = JSON.parse(json);",
+                    "example": "// Serialize and deserialize JSON data"
+                },
+                {
+                    "title": "Local Storage",
+                    "description": "Store data in the browser that persists even after the page reloads.",
+                    "syntax": "localStorage.setItem('theme', 'dark');\nconsole.log(localStorage.getItem('theme'));\nlocalStorage.removeItem('theme');\nlocalStorage.clear();",
+                    "example": "// Save and retrieve key-value pairs"
+                },
+                {
+                    "title": "Session Storage",
+                    "description": "Stores data per browser tab. Data is cleared when the tab is closed.",
+                    "syntax": "sessionStorage.setItem('loggedIn', true);\nconsole.log(sessionStorage.getItem('loggedIn'));\nsessionStorage.removeItem('loggedIn');",
+                    "example": "// Temporary storage for one tab session"
+                },
+                {
+                    "title": "Cookies",
+                    "description": "Small text data stored by the browser and sent with each request. Useful for sessions and tracking.",
+                    "syntax": "document.cookie = 'user=Igor; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/';\nconsole.log(document.cookie);",
+                    "example": "// Store simple key-value pairs"
+                },
+                {
+                    "title": "Timers (setTimeout / setInterval)",
+                    "description": "Schedule functions to run after a delay or repeatedly at intervals.",
+                    "syntax": "setTimeout(() => console.log('Runs once after 1s'), 1000);\nlet timer = setInterval(() => console.log('Repeats every 2s'), 2000);\nclearInterval(timer);",
+                    "example": "// Delay or repeat code execution"
+                },
+                {
+                    "title": "Geolocation API",
+                    "description": "Get the user's geographic location (requires permission).",
+                    "syntax": "navigator.geolocation.getCurrentPosition(\n  position => console.log(position.coords.latitude, position.coords.longitude),\n  error => console.error(error)\n);",
+                    "example": "// Retrieve user's latitude and longitude"
+                },
+                {
+                    "title": "Clipboard API",
+                    "description": "Read from or write text to the user's clipboard (requires HTTPS).",
+                    "syntax": "navigator.clipboard.writeText('Copied text!');\nnavigator.clipboard.readText().then(text => console.log(text));",
+                    "example": "// Copy or paste text programmatically"
+                },
+                {
+                    "title": "Notifications API",
+                    "description": "Display system notifications with user permission.",
+                    "syntax": "Notification.requestPermission().then(permission => {\n  if (permission === 'granted') {\n    new Notification('Hello!', { body: 'This is a test notification.' });\n  }\n});",
+                    "example": "// Sends a desktop notification"
+                },
+                {
+                    "title": "Vibration API",
+                    "description": "Trigger device vibration (mobile only, with user interaction).",
+                    "syntax": "navigator.vibrate(200);\n// or vibration pattern\nnavigator.vibrate([200, 100, 200]);",
+                    "example": "// Vibrates device for tactile feedback"
+                },
+                {
+                    "title": "Fullscreen API",
+                    "description": "Enter or exit fullscreen mode for a specific element.",
+                    "syntax": "element.requestFullscreen();\ndocument.exitFullscreen();",
+                    "example": "// Makes an element fill the screen"
+                },
+                {
+                    "title": "Intersection Observer API",
+                    "description": "Detect when elements enter or leave the viewport (used for lazy loading and animations).",
+                    "syntax": "const observer = new IntersectionObserver(entries => {\n  entries.forEach(entry => {\n    if (entry.isIntersecting) console.log('Visible:', entry.target);\n  });\n});\nobserver.observe(document.querySelector('.image'));",
+                    "example": "// Detects element visibility changes"
+                },
+                {
+                    "title": "Drag & Drop API",
+                    "description": "Allow elements to be dragged and dropped within a page.",
+                    "syntax": "element.setAttribute('draggable', true);\nelement.addEventListener('dragstart', e => e.dataTransfer.setData('text', 'Hello'));\ntarget.addEventListener('drop', e => console.log(e.dataTransfer.getData('text')));",
+                    "example": "// Enable custom drag-and-drop behavior"
+                },
+                {
+                    "title": "History API",
+                    "description": "Control browser history (useful for single-page apps).",
+                    "syntax": "history.pushState({ page: 1 }, 'Title', '/page1');\nhistory.back();\nhistory.forward();",
+                    "example": "// Manage navigation without reloading"
+                },
+                {
+                    "title": "Canvas API",
+                    "description": "Draw shapes, text, and images using 2D rendering.",
+                    "syntax": "const canvas = document.getElementById('myCanvas');\nconst ctx = canvas.getContext('2d');\nctx.fillStyle = 'blue';\nctx.fillRect(10, 10, 100, 50);",
+                    "example": "// Draws a blue rectangle"
+                },
+                {
+                    "title": "Audio API",
+                    "description": "Play, manipulate, and visualize audio content.",
+                    "syntax": "const audio = new Audio('song.mp3');\naudio.play();",
+                    "example": "// Plays an audio file"
+                },
+                {
+                    "title": "Web Storage Summary",
+                    "icon": "fa-database",
+                    "nestIcon": "fa-plus",
+                    "favorite": "./img/icons8-database-50.png",
+                    "description": "Compare storage options for saving data in the browser.",
+                    "content": [
+                        {
+                            "title": "localStorage",
+                            "description": "Persistent storage across sessions.",
+                            "syntax": "localStorage.setItem('theme', 'dark');",
+                            "example": "// Remains even after browser close"
+                        },
+                        {
+                            "title": "sessionStorage",
+                            "description": "Temporary storage per browser tab.",
+                            "syntax": "sessionStorage.setItem('user', 'Igor');",
+                            "example": "// Cleared when tab closes"
+                        },
+                        {
+                            "title": "IndexedDB",
+                            "description": "Database-style storage for large structured data.",
+                            "syntax": "let request = indexedDB.open('MyDB', 1);\nrequest.onsuccess = () => console.log('DB opened');",
+                            "example": "// Create or open a local database"
+                        },
+                        {
+                            "title": "Cookies",
+                            "description": "Small text-based storage sent with every request.",
+                            "syntax": "document.cookie = 'key=value; expires=...';",
+                            "example": "// Used for sessions or preferences"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "advanced-storage",
+            "name": "Advanced Browser Storage & Offline APIs",
+            "icon": "fa-database",
+            "favorite": "./img/icons8-rating-circled-50.png",
+            "description": "Store and manage data in the browser using IndexedDB, Cache API, Service Workers, and other offline capabilities. Useful for complex applications and Progressive Web Apps (PWAs).",
+            "cards": [
+                {
+                    "title": "IndexedDB",
+                    "description": "Low-level API for storing large amounts of structured data in the browser. Supports transactions and key-value storage.",
+                    "syntax": "const request = indexedDB.open('MyDatabase', 1);\nrequest.onsuccess = function(event) {\n  const db = event.target.result;\n};\nrequest.onupgradeneeded = function(event) {\n  const db = event.target.result;\n  db.createObjectStore('users', { keyPath: 'id' });\n};",
+                    "example": "// Create a database with an object store for users"
+                },
+                {
+                    "title": "Using IndexedDB Transactions",
+                    "description": "Read/write data safely using transactions.",
+                    "syntax": "const transaction = db.transaction(['users'], 'readwrite');\nconst store = transaction.objectStore('users');\nstore.add({id: 1, name: 'Igor'});\ntransaction.oncomplete = () => console.log('Transaction done');",
+                    "example": "// Add a user to IndexedDB using a transaction"
+                },
+                {
+                    "title": "Cache API",
+                    "description": "Store network responses (HTML, CSS, JS, images) for offline use.",
+                    "syntax": "caches.open('my-cache').then(cache => {\n  cache.add('/index.html');\n  cache.add('/style.css');\n});",
+                    "example": "// Cache files for offline access"
+                },
+                {
+                    "title": "Service Workers",
+                    "description": "Scripts running in the background that can intercept network requests and manage cache, enabling offline functionality.",
+                    "syntax": "self.addEventListener('install', event => {\n  event.waitUntil(\n    caches.open('my-cache').then(cache => cache.addAll(['/','/index.html']))\n  );\n});\n\nself.addEventListener('fetch', event => {\n  event.respondWith(\n    caches.match(event.request).then(response => response || fetch(event.request))\n  );\n});",
+                    "example": "// Intercept requests and serve cached responses when offline"
+                },
+                {
+                    "title": "sessionStorage",
+                    "description": "Store data for a single browser session. Cleared when the tab is closed.",
+                    "syntax": "sessionStorage.setItem('name', 'Igor');\nconst name = sessionStorage.getItem('name');",
+                    "example": "// Temporary storage for session-specific data"
+                },
+                {
+                    "title": "localStorage",
+                    "description": "Store key-value data in the browser persistently, even after the browser is closed.",
+                    "syntax": "localStorage.setItem('theme', 'dark');\nconst theme = localStorage.getItem('theme');\nlocalStorage.removeItem('theme');",
+                    "example": "// Persistent storage for user preferences"
+                },
+                {
+                    "title": "File API",
+                    "description": "Read or manipulate files selected by the user.",
+                    "syntax": "const input = document.querySelector('input[type=file]');\ninput.addEventListener('change', e => {\n  const file = e.target.files[0];\n  const reader = new FileReader();\n  reader.onload = () => console.log(reader.result);\n  reader.readAsText(file);\n});",
+                    "example": "// Read text content of a file chosen by the user"
+                },
+                {
+                    "title": "Clipboard API",
+                    "description": "Programmatically read from or write to the clipboard.",
+                    "syntax": "navigator.clipboard.writeText('Hello');\nnavigator.clipboard.readText().then(text => console.log(text));",
+                    "example": "// Copy and paste text using JavaScript"
+                },
+                {
+                    "title": "Best Practices",
+                    "description": "Tips for using browser storage and offline APIs efficiently.",
+                    "syntax": "1. Use localStorage for small, simple data.\n2. Use IndexedDB for large or structured datasets.\n3. Cache only necessary assets to save space.\n4. Handle errors for storage limits and unavailable APIs.\n5. Use Service Workers for offline-first apps.",
+                    "example": "// Efficient and reliable offline storage"
+                }
+            ]
         },
         {
             "id": "json",
             "name": "JSON",
-            "icon": "fa-file",
+            "icon": "fa-file-code",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Structure, store, and exchange data in a lightweight, human-readable format widely used in web development."
+            "description": "JavaScript Object Notation (JSON) is a lightweight format for exchanging data between a server and a client.",
+            "cards": [
+                {
+                    "title": "What is JSON?",
+                    "description": "A text-based format for storing and transmitting data. It looks like JavaScript objects but is always a string when sent over the network.",
+                    "syntax": "{ \"name\": \"Igor\", \"age\": 25, \"isStudent\": true }",
+                    "example": "// JSON representation of an object"
+                },
+                {
+                    "title": "Converting JavaScript Objects to JSON",
+                    "description": "Use JSON.stringify() to convert objects or arrays into a JSON string.",
+                    "syntax": "const obj = { name: 'Igor', age: 25 };\nconst json = JSON.stringify(obj);",
+                    "example": "// '{\"name\":\"Igor\",\"age\":25}'"
+                },
+                {
+                    "title": "Parsing JSON to JavaScript",
+                    "description": "Use JSON.parse() to convert a JSON string back into a JavaScript object or array.",
+                    "syntax": "const json = '{\"name\":\"Igor\",\"age\":25}';\nconst obj = JSON.parse(json);",
+                    "example": "// { name: 'Igor', age: 25 }"
+                },
+                {
+                    "title": "JSON Arrays",
+                    "description": "JSON can represent arrays as well as objects.",
+                    "syntax": "const jsonArray = '[{\"name\":\"Igor\"},{\"name\":\"Anna\"}]';\nconst arr = JSON.parse(jsonArray);",
+                    "example": "// [{name:'Igor'}, {name:'Anna'}]"
+                },
+                {
+                    "title": "Handling Nested Data",
+                    "description": "JSON supports nested objects and arrays.",
+                    "syntax": "const nested = '{\"user\":{\"name\":\"Igor\",\"details\":{\"age\":25}}}';\nconst obj = JSON.parse(nested);",
+                    "example": "// { user: { name: 'Igor', details: { age: 25 } } }"
+                },
+                {
+                    "title": "Common Use Cases",
+                    "description": "JSON is used in APIs, configuration files, local storage, and transmitting data between client and server.",
+                    "syntax": "fetch('https://api.example.com/data')\n  .then(res => res.json())\n  .then(data => console.log(data));",
+                    "example": "// Parse JSON response from an API"
+                }
+            ]
         },
         {
-            "id": "es6+",
-            "name": "ES6+",
+            "id": "es6",
+            "name": "ES6 / Modern JavaScript",
             "icon": "fa-wand-sparkles",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Take advantage of modern JavaScript features such as arrow functions, template literals, classes, and modules."
+            "description": "Modern JavaScript (ES6+) introduces new syntax and features like let/const, arrow functions, classes, modules, destructuring, and more.",
+            "cards": [
+                {
+                    "title": "let and const",
+                    "description": "Block-scoped variables. Use const for constants and let for variables that may change.",
+                    "syntax": "let age = 25;\nconst name = 'Igor';",
+                    "example": "// 'age' can change, 'name' cannot"
+                },
+                {
+                    "title": "Arrow Functions",
+                    "description": "Shorter syntax for writing functions. Lexically binds 'this'.",
+                    "syntax": "const add = (a, b) => a + b;\nconst greet = name => console.log(`Hello, ${name}`);",
+                    "example": "// add(2,3) => 5\n// greet('Igor') => Hello, Igor"
+                },
+                {
+                    "title": "Template Literals",
+                    "description": "Use backticks for string interpolation and multi-line strings.",
+                    "syntax": "const name = 'Igor';\nconst msg = `Hello, ${name}!`;\nconst multi = `Line1\nLine2`;",
+                    "example": "// 'Hello, Igor!' and 'Line1\\nLine2'"
+                },
+                {
+                    "title": "Destructuring",
+                    "description": "Extract values from arrays or objects into variables.",
+                    "syntax": "const [a, b] = [1, 2];\nconst {name, age} = {name: 'Igor', age: 25};",
+                    "example": "// a=1, b=2, name='Igor', age=25"
+                },
+                {
+                    "title": "Default Parameters",
+                    "description": "Set default values for function parameters.",
+                    "syntax": "function greet(name='Guest') {\n  console.log(`Hello, ${name}`);\n}",
+                    "example": "// greet() => Hello, Guest"
+                },
+                {
+                    "title": "Rest and Spread",
+                    "description": "Collect multiple values into an array (rest) or expand arrays/objects (spread).",
+                    "syntax": "function sum(...nums) { return nums.reduce((a,b)=>a+b,0); }\nconst arr = [1,2,3];\nconst newArr = [...arr,4,5];",
+                    "example": "// sum(1,2,3)=6, newArr=[1,2,3,4,5]"
+                },
+                {
+                    "title": "Modules",
+                    "description": "Import and export code between files.",
+                    "syntax": "export const pi = 3.14;\nimport { pi } from './math.js';",
+                    "example": "// Access exported constants or functions from other files"
+                },
+                {
+                    "title": "Classes",
+                    "description": "Define objects using class syntax with constructor, methods, and inheritance.",
+                    "syntax": "class Person {\n  constructor(name, age) {\n    this.name = name;\n    this.age = age;\n  }\n  greet() {\n    console.log(`Hello, ${this.name}`);\n  }\n}\nclass Student extends Person {}",
+                    "example": "// Create objects and use inheritance"
+                },
+                {
+                    "title": "ES6 Features",
+                    "icon": "fa-plus",
+                    "nestIcon": "fa-plus",
+                    "favorite": "./img/icons8-code-50.png",
+                    "description": "A summary of additional ES6+ features.",
+                    "content": [
+                        {
+                            "title": "for...of Loop",
+                            "description": "Iterate over iterable objects like arrays and strings.",
+                            "syntax": "for (const item of arr) {\n  console.log(item);\n}",
+                            "example": "// Logs each array element"
+                        },
+                        {
+                            "title": "Map and Set",
+                            "description": "New collection types: Map stores key-value pairs, Set stores unique values.",
+                            "syntax": "const map = new Map();\nmap.set('a', 1);\nconst set = new Set([1,2,3]);",
+                            "example": "// map.get('a')=1, set has 1,2,3"
+                        },
+                        {
+                            "title": "Promises",
+                            "description": "Handle asynchronous operations with then/catch.",
+                            "syntax": "const promise = new Promise((resolve, reject) => {\n  resolve('Done');\n});\npromise.then(result => console.log(result));",
+                            "example": "// Logs 'Done'"
+                        },
+                        {
+                            "title": "Async/Await",
+                            "description": "Syntactic sugar for working with Promises asynchronously.",
+                            "syntax": "async function fetchData() {\n  const res = await fetch('url');\n  const data = await res.json();\n  console.log(data);\n}",
+                            "example": "// Fetch and log JSON asynchronously"
+                        },
+                        {
+                            "title": "Symbols",
+                            "description": "Create unique identifiers for object properties.",
+                            "syntax": "const id = Symbol('id');\nconst obj = { [id]: 123 };",
+                            "example": "// obj[id]=123"
+                        },
+                        {
+                            "title": "Enhanced Object Literals",
+                            "description": "Shorthand syntax for object properties and methods.",
+                            "syntax": "const name='Igor'; const obj={name, greet(){console.log('Hi');}};",
+                            "example": "// obj.name='Igor', obj.greet() logs 'Hi'"
+                        },
+                        {
+                            "title": "String & Array Methods",
+                            "description": "ES6 added useful methods like includes(), startsWith(), endsWith(), find(), findIndex(), etc.",
+                            "syntax": "const arr=[1,2,3]; arr.includes(2); const str='Hello'; str.startsWith('H');",
+                            "example": "// true, true"
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "id": "fetch-&-promises",
+            "id": "fetch-promises",
             "name": "Fetch & Promises",
             "icon": "fa-download",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Retrieve data from APIs, work with asynchronous code, and handle responses and errors smoothly."
+            "description": "Handle asynchronous network requests in JavaScript using the Fetch API and Promises, including modern async/await syntax.",
+            "cards": [
+                {
+                    "title": "What is a Promise?",
+                    "description": "A Promise represents a value that may be available now, later, or never. It is used for asynchronous operations.",
+                    "syntax": "const promise = new Promise((resolve, reject) => {\n  // async operation\n});",
+                    "example": "// Create a promise to handle async results"
+                },
+                {
+                    "title": "Promise States",
+                    "description": "A Promise can be in one of three states: pending, fulfilled (resolved), or rejected.",
+                    "syntax": "promise.then(value => console.log(value))\n       .catch(error => console.error(error));",
+                    "example": "// Handle successful or failed async operations"
+                },
+                {
+                    "title": "Creating and Using Promises",
+                    "description": "Wrap asynchronous operations in a Promise to manage their completion or failure.",
+                    "syntax": "const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));\nwait(1000).then(() => console.log('1 second passed'));",
+                    "example": "// Logs after 1 second"
+                },
+                {
+                    "title": "Chaining Promises",
+                    "description": "Promises can be chained to perform sequential asynchronous operations.",
+                    "syntax": "fetch('https://api.example.com/data')\n  .then(response => response.json())\n  .then(data => console.log(data))\n  .catch(error => console.error(error));",
+                    "example": "// Fetch JSON data and handle errors"
+                },
+                {
+                    "title": "Promise.all() and Promise.race()",
+                    "description": "Run multiple Promises in parallel. `all` waits for all to resolve, `race` resolves/rejects as soon as one finishes.",
+                    "syntax": "Promise.all([promise1, promise2]).then(results => console.log(results));\nPromise.race([promise1, promise2]).then(result => console.log(result));",
+                    "example": "// Combine multiple asynchronous tasks"
+                },
+                {
+                    "title": "Async/Await",
+                    "description": "Syntactic sugar for Promises. Use `async` functions and `await` to write asynchronous code in a synchronous style.",
+                    "syntax": "async function fetchData() {\n  try {\n    const response = await fetch('https://api.example.com/data');\n    const data = await response.json();\n    console.log(data);\n  } catch (error) {\n    console.error('Error:', error);\n  }\n}\nfetchData();",
+                    "example": "// Fetch data with readable async code"
+                },
+                {
+                    "title": "Fetch API",
+                    "description": "Modern API for network requests. Returns a Promise and can handle JSON, text, blobs, and more.",
+                    "syntax": "fetch('https://api.example.com/users')\n  .then(res => res.json())\n  .then(data => console.log(data))\n  .catch(err => console.error(err));",
+                    "example": "// Makes a GET request and parses JSON response"
+                },
+                {
+                    "title": "Fetch POST Requests",
+                    "description": "Send data to a server with POST using fetch and proper headers.",
+                    "syntax": "fetch('https://api.example.com/users', {\n  method: 'POST',\n  headers: { 'Content-Type': 'application/json' },\n  body: JSON.stringify({ name: 'Igor', age: 25 })\n})\n.then(res => res.json())\n.then(data => console.log(data));",
+                    "example": "// Sends JSON data to the server"
+                },
+                {
+                    "title": "Error Handling in Fetch",
+                    "description": "Fetch only rejects on network errors, not HTTP errors. Check `response.ok` for success.",
+                    "syntax": "fetch('https://api.example.com/data')\n  .then(res => {\n    if (!res.ok) throw new Error('Network error');\n    return res.json();\n  })\n  .then(data => console.log(data))\n  .catch(err => console.error(err));",
+                    "example": "// Handles both network and HTTP errors"
+                }
+            ]
         },
         {
-            "id": "error-&-debugging",
-            "name": "Error & Debugging",
+            "id": "error-debugging",
+            "name": "Error Handling & Debugging",
             "icon": "fa-bug",
             "favorite": "./img/icons8-rating-circled-50.png",
-            "description": "Find and fix problems in your code using debugging tools, error handling techniques, and best practices."
+            "description": "Detect, handle, and debug errors in JavaScript using built-in error types, try/catch, debugging tools, and best practices.",
+            "cards": [
+                {
+                    "title": "Common JavaScript Errors",
+                    "description": "Learn the types of errors that can occur in JS.",
+                    "syntax": "ReferenceError: variable is not defined\nTypeError: invalid operation on a type\nSyntaxError: invalid code syntax\nRangeError: number out of range\nURIError: invalid URI handling\nEvalError: error in eval()",
+                    "example": "// Example: console.log(x) when x is undefined -> ReferenceError"
+                },
+                {
+                    "title": "try / catch / finally",
+                    "description": "Handle errors gracefully and optionally execute cleanup code.",
+                    "syntax": "try {\n  // code that may throw an error\n} catch (error) {\n  console.error(error.message);\n} finally {\n  console.log('Always runs');\n}",
+                    "example": "// Catch errors and ensure some code always runs"
+                },
+                {
+                    "title": "throw Statement",
+                    "description": "Manually create and throw custom errors.",
+                    "syntax": "function checkAge(age) {\n  if (age < 18) throw new Error('Underage');\n}\ntry {\n  checkAge(15);\n} catch(e) {\n  console.log(e.message);\n}",
+                    "example": "// Throws 'Underage' and catches it"
+                },
+                {
+                    "title": "Custom Error Types",
+                    "description": "Create your own error classes for better error handling.",
+                    "syntax": "class ValidationError extends Error {\n  constructor(message) {\n    super(message);\n    this.name = 'ValidationError';\n  }\n}\nthrow new ValidationError('Invalid input');",
+                    "example": "// Custom error with a specific name"
+                },
+                {
+                    "title": "Debugging with console",
+                    "description": "Use console methods to inspect and log code behavior.",
+                    "syntax": "console.log('Info');\nconsole.error('Error');\nconsole.warn('Warning');\nconsole.table([{name:'Igor', age:25}]);\nconsole.time('label');\nconsole.timeEnd('label');",
+                    "example": "// Logs information, errors, warnings, tables, and timing"
+                },
+                {
+                    "title": "Debugger Statement",
+                    "description": "Pause execution and open developer tools debugger.",
+                    "syntax": "function test() {\n  debugger;\n  console.log('Paused');\n}\ntest();",
+                    "example": "// Opens debugger at the specified line"
+                },
+                {
+                    "title": "Breakpoints",
+                    "description": "Set breakpoints in browser dev tools to pause and inspect code.",
+                    "syntax": "// Use Chrome/Firefox dev tools -> Sources panel -> click line number",
+                    "example": "// Step through code and inspect variables"
+                },
+                {
+                    "title": "Common Debugging Techniques",
+                    "description": "Effective methods to find and fix errors in JavaScript.",
+                    "syntax": "1. Use console.log() to trace values\n2. Check stack traces for error location\n3. Use debugger or breakpoints\n4. Validate input and data types\n5. Isolate code blocks to find issues",
+                    "example": "// Combine these techniques for efficient debugging"
+                },
+                {
+                    "title": "Handling Asynchronous Errors",
+                    "description": "Use try/catch with async/await and .catch() with Promises.",
+                    "syntax": "async function fetchData() {\n  try {\n    const res = await fetch('url');\n    if (!res.ok) throw new Error('Network error');\n    const data = await res.json();\n    console.log(data);\n  } catch (error) {\n    console.error(error);\n  }\n}\nfetch('url').then(r=>r.json()).catch(e=>console.error(e));",
+                    "example": "// Handle errors for both Promises and async functions"
+                },
+                {
+                    "title": "Best Practices",
+                    "description": "Tips for robust error handling and debugging.",
+                    "syntax": "1. Always handle possible errors\n2. Provide meaningful error messages\n3. Avoid silent failures\n4. Validate inputs and outputs\n5. Use logging and monitoring in production",
+                    "example": "// Maintain readable, maintainable, and reliable code"
+                }
+            ]
+        },
+        {
+            "id": "regex",
+            "name": "Regular Expressions (RegEx)",
+            "icon": "fa-search",
+            "favorite": "./img/icons8-rating-circled-50.png",
+            "description": "Patterns used to match, search, and replace text in strings. Essential for validation, parsing, and text manipulation.",
+            "cards": [
+                {
+                    "title": "What is a Regular Expression?",
+                    "description": "A RegEx is a sequence of characters that defines a search pattern, mainly used for string matching.",
+                    "syntax": "const pattern = /abc/;\nconst pattern2 = new RegExp('abc');",
+                    "example": "// Matches 'abc' in a string"
+                },
+                {
+                    "title": "Basic Patterns",
+                    "description": "Common symbols and their meaning.",
+                    "syntax": ".  => any character\n\\d => digit [0-9]\n\\w => word character [a-zA-Z0-9_]\n\\s => whitespace\n^  => start of string\n$  => end of string\n[] => character set",
+                    "example": "// /\\d/ matches '5' in 'abc5def'"
+                },
+                {
+                    "title": "Quantifiers",
+                    "description": "Specify how many times a character or group should appear.",
+                    "syntax": "* => 0 or more\n+ => 1 or more\n? => 0 or 1\n{n} => exactly n\n{n,} => n or more\n{n,m} => between n and m",
+                    "example": "// /a*/ matches '', 'a', 'aa', etc."
+                },
+                {
+                    "title": "Flags",
+                    "description": "Modify the behavior of the pattern.",
+                    "syntax": "g => global match\ni => case-insensitive\nm => multi-line\ns => dot matches newline\ny => sticky",
+                    "example": "// /abc/gi matches 'ABC' and 'abc' globally"
+                },
+                {
+                    "title": "RegEx Methods",
+                    "description": "Use RegEx with strings or on the RegExp object.",
+                    "syntax": "const str = 'hello123';\nstr.match(/\\d+/); // returns ['123']\nstr.replace(/\\d+/, '456'); // 'hello456'\n/\\d+/.test(str); // true\n/\\d+/.exec(str); // ['123']",
+                    "example": "// Search, match, replace, or test strings"
+                },
+                {
+                    "title": "Anchors and Boundaries",
+                    "description": "Define positions in the string rather than characters.",
+                    "syntax": "^abc => string starts with 'abc'\nabc$ => string ends with 'abc'\n\\bword\\b => matches 'word' as a whole word",
+                    "example": "// /^Hello/.test('Hello world') => true"
+                },
+                {
+                    "title": "Groups and Capturing",
+                    "description": "Use parentheses to group parts of a pattern and capture matches.",
+                    "syntax": "const str = '2025-10-19';\nconst pattern = /(\\d{4})-(\\d{2})-(\\d{2})/;\nconst result = str.match(pattern);\nconsole.log(result);",
+                    "example": "// ['2025-10-19','2025','10','19']"
+                },
+                {
+                    "title": "Alternation",
+                    "description": "Use the pipe | to match one pattern or another.",
+                    "syntax": "/cat|dog/.test('dog');",
+                    "example": "// true"
+                },
+                {
+                    "title": "Lookahead and Lookbehind",
+                    "description": "Advanced patterns to assert conditions without consuming characters.",
+                    "syntax": "const pattern = /\\\\d(?=px)/; // matches digits followed by 'px'\nconst pattern2 = /(?<=\\\\$)\\\\d+/; // digits preceded by '$'",
+                    "example": "// '12px' matches '12', '$50' matches '50'"
+                },
+                {
+                    "title": "Practical Examples",
+                    "description": "Common use cases for RegEx in JavaScript.",
+                    "syntax": "// Validate email\nconst emailPattern = /^[\\w.-]+@[\\w.-]+\\.\\w+$/;\n// Validate phone number\nconst phonePattern = /^\\+?\\d{10,14}$/;\n// Extract hashtags\nconst hashtags = str.match(/#\\w+/g);",
+                    "example": "// Matches valid emails, phones, hashtags"
+                }
+            ]
+        },
+        {
+            "id": "oop",
+            "name": "Object-Oriented Programming (OOP)",
+            "icon": "fa-cubes",
+            "favorite": "./img/icons8-rating-circled-50.png",
+            "description": "Organize code using objects, classes, and inheritance. OOP allows modular, reusable, and maintainable code.",
+            "cards": [
+                {
+                    "title": "What is OOP?",
+                    "description": "Programming paradigm based on objects containing data (properties) and behavior (methods).",
+                    "syntax": "const person = {\n  name: 'Igor',\n  age: 25,\n  greet() { console.log(`Hello, ${this.name}`); }\n};",
+                    "example": "// Access properties and call methods: person.greet() => 'Hello, Igor'"
+                },
+                {
+                    "title": "Classes",
+                    "description": "Blueprints for creating objects with properties and methods.",
+                    "syntax": "class Person {\n  constructor(name, age) {\n    this.name = name;\n    this.age = age;\n  }\n  greet() {\n    console.log(`Hello, ${this.name}`);\n  }\n}\nconst p = new Person('Igor', 25);\np.greet();",
+                    "example": "// 'Hello, Igor'"
+                },
+                {
+                    "title": "Inheritance",
+                    "description": "Create new classes that extend existing ones, inheriting properties and methods.",
+                    "syntax": "class Student extends Person {\n  constructor(name, age, grade) {\n    super(name, age);\n    this.grade = grade;\n  }\n  study() {\n    console.log(`${this.name} is studying`);\n  }\n}\nconst s = new Student('Anna', 20, 'A');\ns.study();",
+                    "example": "// 'Anna is studying'"
+                },
+                {
+                    "title": "Getters and Setters",
+                    "description": "Access or modify object properties with functions.",
+                    "syntax": "class Person {\n  constructor(name) { this._name = name; }\n  get name() { return this._name; }\n  set name(value) { this._name = value; }\n}\nconst p = new Person('Igor');\nconsole.log(p.name); // 'Igor'\np.name = 'Anna';",
+                    "example": "// Getter returns value, setter modifies it"
+                },
+                {
+                    "title": "Static Methods",
+                    "description": "Methods called on the class itself, not instances.",
+                    "syntax": "class MathUtil {\n  static add(a,b) { return a+b; }\n}\nconsole.log(MathUtil.add(2,3));",
+                    "example": "// 5"
+                },
+                {
+                    "title": "Prototype Inheritance",
+                    "description": "All JavaScript objects have a prototype from which they inherit methods and properties.",
+                    "syntax": "function Person(name) { this.name = name; }\nPerson.prototype.greet = function() { console.log(`Hello, ${this.name}`); };\nconst p = new Person('Igor');\np.greet();",
+                    "example": "// 'Hello, Igor'"
+                },
+                {
+                    "title": "Encapsulation",
+                    "description": "Keep data private and expose only what is necessary.",
+                    "syntax": "class Person {\n  #secret = 'hidden';\n  getSecret() { return this.#secret; }\n}\nconst p = new Person();\nconsole.log(p.getSecret());",
+                    "example": "// Access private property through getter only"
+                },
+                {
+                    "title": "Polymorphism",
+                    "description": "Objects of different classes can be treated as objects of a common superclass and behave differently.",
+                    "syntax": "class Animal {\n  speak() { console.log('Animal sound'); }\n}\nclass Dog extends Animal {\n  speak() { console.log('Woof'); }\n}\nconst a = new Animal();\nconst d = new Dog();\na.speak(); d.speak();",
+                    "example": "// 'Animal sound', 'Woof'"
+                },
+                {
+                    "title": "Object.assign() & Object.create()",
+                    "description": "Copy properties between objects or create objects with a specific prototype.",
+                    "syntax": "const obj1 = {a:1}; const obj2 = {b:2};\nconst merged = Object.assign({}, obj1, obj2);\nconst protoObj = Object.create(obj1);",
+                    "example": "// merged={a:1,b:2}, protoObj inherits from obj1"
+                }
+            ]
+        },
+        {
+            "id": "modules",
+            "name": "Modules",
+            "icon": "fa-folder-open",
+            "favorite": "./img/icons8-rating-circled-50.png",
+            "description": "Organize JavaScript code into separate files (modules) that can export and import variables, functions, or classes. Improves maintainability and reuse.",
+            "cards": [
+                {
+                    "title": "What are Modules?",
+                    "description": "Modules are individual JavaScript files that encapsulate code and expose only what is needed via exports. Other files can import them.",
+                    "syntax": "// module.js\nexport const name = 'Igor';\nexport function greet() { console.log('Hello'); }",
+                    "example": "// Exports variables and functions to be used elsewhere"
+                },
+                {
+                    "title": "Importing Modules",
+                    "description": "Use `import` to access exported variables, functions, or classes from another file.",
+                    "syntax": "// main.js\nimport { name, greet } from './module.js';\nconsole.log(name); // 'Igor'\ngreet(); // 'Hello'",
+                    "example": "// Access exports from module.js"
+                },
+                {
+                    "title": "Default Exports",
+                    "description": "A module can export a single default value.",
+                    "syntax": "// module.js\nexport default function sayHi() { console.log('Hi'); }\n\n// main.js\nimport sayHi from './module.js';\nsayHi();",
+                    "example": "// 'Hi'"
+                },
+                {
+                    "title": "Renaming Imports/Exports",
+                    "description": "Use `as` to rename imported or exported elements.",
+                    "syntax": "// module.js\nexport const name = 'Igor';\n// main.js\nimport { name as userName } from './module.js';\nconsole.log(userName);",
+                    "example": "// 'Igor'"
+                },
+                {
+                    "title": "Import All",
+                    "description": "Import all exports from a module as an object.",
+                    "syntax": "// main.js\nimport * as utils from './module.js';\nconsole.log(utils.name);\nutils.greet();",
+                    "example": "// Access all exports via the 'utils' object"
+                },
+                {
+                    "title": "Dynamic Imports",
+                    "description": "Import modules dynamically at runtime using `import()` returning a Promise.",
+                    "syntax": "async function loadModule() {\n  const module = await import('./module.js');\n  module.greet();\n}\nloadModule();",
+                    "example": "// Load modules only when needed"
+                },
+                {
+                    "title": "Module Scope",
+                    "description": "Variables declared in a module are scoped to that file, avoiding pollution of the global scope.",
+                    "syntax": "// module.js\nconst localVar = 10;\nexport const publicVar = 20;\n// main.js\nimport { publicVar } from './module.js';\nconsole.log(publicVar); // 20\n// localVar is not accessible",
+                    "example": "// Encapsulation through module scope"
+                },
+                {
+                    "title": "Browser vs Node Modules",
+                    "description": "Modern browsers support ES6 modules with `<script type='module'>`. Node.js uses CommonJS (`require/module.exports`) or ES6 modules with `.mjs` or 'type': 'module'.",
+                    "syntax": "// Browser: <script type='module' src='main.js'></script>\n// Node.js ES6: import { greet } from './module.mjs';",
+                    "example": "// Module usage differs slightly by environment"
+                }
+            ] 
         }
     ]
 }
