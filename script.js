@@ -1,6 +1,7 @@
 // Init variables
 const sideMenuBtn = document.querySelector('#menu');
 const introBox = document.querySelector('#intro-box');
+const favBtn = document.querySelector('#favorites button');
 
 // Fetch from JSON
 const fetchJSON = async (path) => {
@@ -42,6 +43,109 @@ const displayCategories = async () => {
         button.addEventListener('click', () => displayCategoryContent(button));
         li.appendChild(button);
         sideMenuList.appendChild(li);
+    });
+};
+
+// Favorites
+const getFavorites = () => JSON.parse(localStorage.getItem('favorites')) || [];
+
+const saveFavorites = (favorites) =>
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+
+const toggleFavorite = (title) => {
+    const favorites = getFavorites();
+    const index = favorites.indexOf(title);
+
+    if (index === -1) {
+        favorites.push(title); // add if not in list
+    } else {
+        favorites.splice(index, 1); // remove if already in list
+    }
+
+    saveFavorites(favorites);
+};
+
+// Load favorites
+const loadFavorites = async () => {
+    const categoryCards = document.querySelector('.cards');
+    categoryCards.innerHTML = '';
+    introBox.innerHTML = '<h2>Favorites</h2>';
+
+    const favorites = getFavorites();
+    const data = await fetchJSON('./data.json');
+    if (!data) return;
+
+    const introText = document.querySelector('#intro-text');
+    if (favorites.length === 0) {
+        introText.innerText =
+            'No favorites yet. ⭐ Tap the star on any card to add one.';
+        return;
+    } else {
+        introText.innerText = 'All your favorited cards in one spot.';
+    }
+
+    favorites.forEach((favTitle) => {
+        let parentCategory = null;
+        let favCard = null;
+
+        // ❗ Use the recursive finder per category so nested cards are found
+        for (const category of data.categories) {
+            const found = findCardRecursive(category.cards, favTitle);
+            if (found) {
+                favCard = found;
+                parentCategory = category;
+                break;
+            }
+        }
+
+        if (favCard && parentCategory) {
+            const cardDiv = document.createElement('div');
+            cardDiv.classList.add('card');
+
+            // Mark has-nest if card has nested content (so CSS/behavior can match)
+            if (favCard.content) cardDiv.classList.add('has-nest');
+
+            cardDiv.innerHTML = `
+                <div class="card-icon">
+                    <div class="card-icon-group">
+                        <i class="fa-solid ${parentCategory.icon}"></i>
+                        <i class="fa-solid ${favCard.nestIcon || ''}"></i>
+                    </div>
+                    <img src="${parentCategory.favorite}" alt="Fav">    
+                </div>
+                <h2>${favCard.title}</h2>
+                <p>${favCard.description || ''}</p>
+            `;
+
+            // Choose click behavior depending on whether the card has nested content
+            if (favCard.content) {
+                cardDiv.addEventListener('click', () =>
+                    displayNestedCards(favCard.title)
+                );
+            } else {
+                cardDiv.addEventListener('click', () =>
+                    displayCardContent(favCard.title)
+                );
+            }
+
+            categoryCards.appendChild(cardDiv);
+
+            // Favorite icon wiring (same as elsewhere)
+            const img = cardDiv.querySelector('img');
+            if (favorites.includes(favCard.title)) {
+                img.src = './img/icons8-star-50.png';
+            }
+
+            img.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const isFavorite = img.src.includes('icons8-star-50.png');
+                img.src = isFavorite
+                    ? './img/icons8-rating-circled-50.png'
+                    : './img/icons8-star-50.png';
+                toggleFavorite(favCard.title);
+                loadFavorites(); // refresh favorites view so removed ones disappear
+            });
+        }
     });
 };
 
@@ -98,7 +202,24 @@ const displayCategoryContent = async (button) => {
                 displayCardContent(card.title)
             );
         }
+
+        const img = cardDiv.querySelector('img');
+        // Check saved state on creation:
+        const favorites = getFavorites();
+        if (favorites.includes(card.title)) {
+            img.src = './img/icons8-star-50.png';
+        }
+        img.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const isFavorite = img.src.includes('icons8-star-50.png');
+
+            img.src = isFavorite
+                ? './img/icons8-rating-circled-50.png'
+                : './img/icons8-star-50.png';
+            toggleFavorite(card.title);
+        });
     });
+
     displaySideMenu();
 };
 
@@ -192,7 +313,24 @@ const displayNestedCards = async (title) => {
                 displayCardContent(nestedCard.title)
             );
         }
+
+        const img = nestedDiv.querySelector('img');
+        // Check saved state on creation:
+        const favorites = getFavorites();
+        if (favorites.includes(nestedCard.title)) {
+            img.src = './img/icons8-star-50.png';
+        }
+        img.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const isFavorite = img.src.includes('icons8-star-50.png');
+
+            img.src = isFavorite
+                ? './img/icons8-rating-circled-50.png'
+                : './img/icons8-star-50.png';
+            toggleFavorite(nestedCard.title);
+        });
     });
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
@@ -205,3 +343,4 @@ const displaySideMenu = () => {
 // Event Listeners / Calling functions
 sideMenuBtn.addEventListener('click', displaySideMenu);
 displayCategories();
+favBtn.addEventListener('click', loadFavorites);
