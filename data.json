@@ -28,14 +28,12 @@
                             "title": "String",
                             "description": "A sequence of characters.",      
                             "syntax": "const name = 'John';"
-                              
                         },
                         {
                             "title": "Number",
                             "description": "Integer or a floating-point number.",     
                             "syntax": "const age = 30;",
                             "example": "const temp = 73.5;"
-                             
                         },
                         {
                             "title": "Boolean",
